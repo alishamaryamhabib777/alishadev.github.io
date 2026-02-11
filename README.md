@@ -8,7 +8,7 @@ It showcases my skills, projects, and contact information.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-# ABOUT WEBSITE
+## ABOUT WEBSITE
 
 This website serves as my online portfolio where recruiters and collaborators can learn more about me and view my projects.
 
