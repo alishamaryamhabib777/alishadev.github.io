@@ -14,7 +14,7 @@ This website serves as my online portfolio where recruiters and collaborators ca
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-# TECHNOLOGIES USED
+## TECHNOLOGIES USED
 
 - HTML
 - CSS
@@ -22,7 +22,7 @@ This website serves as my online portfolio where recruiters and collaborators ca
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-# FEATURES
+## FEATURES
 
 - Responsive design
 - About Me section
