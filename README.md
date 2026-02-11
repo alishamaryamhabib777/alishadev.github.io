@@ -1,7 +1,7 @@
 # alishadev.github.io
 MY PORTOFOLIO
 
-# ------------------------------------------🌐 MY PERSONAL PORTFOLIO------------------------------------------------------
+# 🌐 MY PERSONAL PORTFOLIO WEBSITE
 
 This is my personal portfolio website built using HTML and CSS.  
 It showcases my skills, projects, and contact information.
