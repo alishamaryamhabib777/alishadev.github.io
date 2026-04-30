@@ -1,34 +1,70 @@
-# alishadev.github.io
-MY PORTOFOLIO
+# Alisha Maryam Habib — Portfolio Website
 
-# 🌐 MY PERSONAL PORTFOLIO WEBSITE
+> Personal portfolio website for Alisha Maryam Habib, BE Software Engineering student at SEECS, NUST.
 
-This is my personal portfolio website built using HTML and CSS.  
-It showcases my skills, projects, and contact information.
+🌐 **Live Site:** [alishamaryamhabib777.github.io/alishadev.github.io](https://alishamaryamhabib777.github.io/alishadev.github.io/#)
 
----------------------------------------------------------------------------------------------------------------------------
+---
 
-## ABOUT WEBSITE
+## About
 
-This website serves as my online portfolio where recruiters and collaborators can learn more about me and view my projects.
+This is my personal portfolio website showcasing my academic background, technical skills, and projects. Built with plain HTML and CSS — no frameworks, no dependencies, fully static and fast.
 
----------------------------------------------------------------------------------------------------------------------------
+---
 
-## TECHNOLOGIES USED
+## Sections
 
-- HTML
-- CSS
-- GitHub Pages (for deployment)
+- **Hero** — Introduction, key stats (CGPA, NET score, awards)
+- **About** — Background, academic details, and goals
+- **Education** — NUST SEECS, Army Public School, Fazaia College Sakesar
+- **Skills** — C++, Java, HTML/CSS, Git, Digital Logic, OOP, and more
+- **Projects** — Tourist Management System, Game Hub, Digital Dice, LED Traffic Light
+- **Achievements** — Chief of Air Staff Gold Medal, NUST admission, academic grades
+- **Contact** — Email, phone, GitHub, portfolio links
 
----------------------------------------------------------------------------------------------------------------------------
+---
 
-## FEATURES
+## Tech Stack
 
-- Responsive design
-- About Me section
-- Skills section
-- Projects showcase
-- Contact information
+- HTML5
+- CSS3 (custom properties, grid, flexbox, animations)
+- Google Fonts (Playfair Display + DM Sans)
+- No JavaScript frameworks · No build tools · No dependencies
 
----------------------------------------------------------------------------------------------------------------------------
+---
 
+## Projects Featured
+
+| Project | Language / Tech | Status |
+|---|---|---|
+| Tourist Management System | C++ | ✅ Completed |
+| Game Hub Desktop Application | Java · Swing GUI | 🔄 In Progress |
+| Digital Dice (CALD) | Hardware · ICs | 🔄 In Progress |
+| LED Traffic Light Circuit | Electronics | ✅ Completed |
+
+---
+
+## Contact
+
+| | |
+|---|---|
+| 📧 Email | ahabib.bese25seecs@student.nust.edu.pk |
+| 📱 Phone | +92 320 3606037 |
+| 🐙 GitHub | [alishamaryamhabib777](https://github.com/alishamaryamhabib777) |
+| 📍 Location | Islamabad, Pakistan |
+
+---
+
+## Deployment
+
+Hosted on **GitHub Pages**. To update, simply push changes to the `main` branch and the site will redeploy automatically.
+
+```bash
+git add .
+git commit -m "Update portfolio"
+git push origin main
+```
+
+---
+
+*BE Software Engineering · SEECS, NUST · Batch 2025 · BESE-16A · CMS ID: 555847*
