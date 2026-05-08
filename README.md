@@ -2,8 +2,6 @@
 
 > Personal portfolio website for Alisha Maryam Habib, BE Software Engineering student at SEECS, NUST.
 
-🌐 **Live Site:** [alishamaryamhabib777.github.io/alishadev.github.io](https://alishamaryamhabib777.github.io/alishadev.github.io/#)
-
 ---
 
 ## About
