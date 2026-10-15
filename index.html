@@ -293,6 +293,19 @@
     /* Sharpening is baked into the enhanced source, so no display filter is applied. */
     .profile-photo{transform:none;object-position:50% 24%;filter:none}
     .brand-avatar img{transform:scale(1.75);transform-origin:50% 23%;object-position:50% 0%;filter:none}
+  
+    .orientation-visual{background:radial-gradient(ellipse at 20% 0%,#75514e,#352a38 78%)}
+    .orientation-visual .mini-window{background:#30262e;border-color:#785357;color:#e1b8a4}
+    .orientation-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:17px;align-items:center;padding:13px 0}
+    .orientation-campus svg{width:100%;max-width:170px;display:block;color:#deba9e}
+    .orientation-visual .mini-label{color:#d6b7aa}.orientation-visual h4{font-size:17px}
+    .orientation-team{display:block;margin-top:11px;font:5px "DM Mono",monospace;letter-spacing:.09em;color:#bc9f9f}
+    .orientation-milestone{display:flex;gap:11px;align-items:center;border-top:1px solid #65494e;padding-top:10px}
+    .orientation-milestone>strong{font:500 25px/1 "Space Grotesk",sans-serif;color:#f0d2b1;letter-spacing:-.04em}
+    .orientation-milestone>span{font:6px/1.5 "DM Mono",monospace;letter-spacing:.06em;color:#d7c1b6}
+    .orientation-milestone b{font-weight:400;color:#b99997}.orientation-milestone .orientation-mark{margin-left:auto;font-size:22px;color:#e5afa3}
+    @media(max-width:360px){.orientation-layout{gap:10px}.orientation-visual h4{font-size:14px}.orientation-team{font-size:4px}}
+
   </style>
 </head>
 <body>
@@ -343,7 +356,7 @@
           <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
           <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button><button class="filter-button" type="button" data-filter="finance" aria-pressed="false">Finance</button><button class="filter-button" type="button" data-filter="healthcare" aria-pressed="false">Healthcare</button>
           <button class="filter-button" type="button" data-filter="software" aria-pressed="false">Software</button>
-          <button class="filter-button" type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
+          <button class="filter-button" type="button" data-filter="hardware" aria-pressed="false">Hardware</button><button class="filter-button" type="button" data-filter="events" aria-pressed="false">Campus &amp; Events</button>
         </div>
         <div class="project-grid" id="project-grid">
           
@@ -353,7 +366,7 @@
                 <div class="finance-layout"><div><span class="mini-label">A CLEARER CASHBOOK</span><h4>Every transaction.<br>A clearer picture.</h4><div class="finance-chart" aria-hidden="true"><svg viewBox="0 0 260 90" fill="none"><path d="M0 77L40 68L72 74L111 43L145 52L184 28L220 36L260 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M0 77L40 68L72 74L111 43L145 52L184 28L220 36L260 7V90H0Z" fill="currentColor" opacity=".08"/></svg></div></div><div class="receipt-preview"><span class="mini-label">RECEIPT → REVIEW</span><span class="receipt-line"></span><span class="receipt-line short"></span><span class="receipt-line"></span><span class="review-chip">✓ Reviewed cashbook</span></div></div>
               </div>
             </div>
-            <div class="project-info"><div class="project-meta"><span class="project-kind">FINANCE · AI BOOKKEEPING</span><span>01 / 07</span></div><h3>Raqam<span class="project-arrow" aria-hidden="true">↗</span></h3><p>An AI bookkeeping project for small businesses, built around receipt OCR, transaction review, and category suggestions.</p><div class="project-bottom"><div class="tags"><span class="tag">Fintech</span><span class="tag">OCR</span><span class="tag">AI workflows</span></div><div class="project-links"><a class="project-open" href="https://raqam-alpha.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/AmazingDude/raqam" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div>
+            <div class="project-info"><div class="project-meta"><span class="project-kind">FINANCE · AI BOOKKEEPING</span><span>01 / 08</span></div><h3>Raqam<span class="project-arrow" aria-hidden="true">↗</span></h3><p>An AI bookkeeping project for small businesses, built around receipt OCR, transaction review, and category suggestions.</p><div class="project-bottom"><div class="tags"><span class="tag">Fintech</span><span class="tag">OCR</span><span class="tag">AI workflows</span></div><div class="project-links"><a class="project-open" href="https://raqam-alpha.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/AmazingDude/raqam" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div>
           </article>
           <article class="project-card reveal" data-category="featured ai web healthcare" data-cursor-label="HEALTHCARE" data-cursor-color="#8ed7d1" style="--sector-accent:#8ed7d1">
             <div class="project-visual health-visual">
@@ -361,10 +374,10 @@
                 <div class="health-layout"><div class="health-emblem" aria-hidden="true">＋</div><div><span class="mini-label">MORE PRESENT. LESS PAPERWORK.</span><h4>Care, with clarity.</h4><svg class="waveform" viewBox="0 0 260 48" fill="none" aria-hidden="true"><path d="M0 24H35L45 15L55 32L65 10L76 39L87 20L98 26H117L128 16L139 32L150 9L161 36L172 21L183 24H260" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div><div class="clinical-steps"><span>01 Record</span><span>02 Review</span><span>03 Save note</span></div>
               </div>
             </div>
-            <div class="project-info"><div class="project-meta"><span class="project-kind">HEALTHCARE · CLINICAL WORKFLOWS</span><span>02 / 07</span></div><h3>Rawaan<span class="project-arrow" aria-hidden="true">↗</span></h3><p>A workspace for doctors and therapists with session recording, reviewed clinical notes, client records, and a conversational assistant.</p><div class="project-bottom"><div class="tags"><span class="tag">Healthtech</span><span class="tag">Clinical notes</span><span class="tag">AI assistant</span></div><div class="project-links"><a class="project-open" href="https://rawaaan.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/AmazingDude/rawaan" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div>
+            <div class="project-info"><div class="project-meta"><span class="project-kind">HEALTHCARE · CLINICAL WORKFLOWS</span><span>02 / 08</span></div><h3>Rawaan<span class="project-arrow" aria-hidden="true">↗</span></h3><p>A workspace for doctors and therapists with session recording, reviewed clinical notes, client records, and a conversational assistant.</p><div class="project-bottom"><div class="tags"><span class="tag">Healthtech</span><span class="tag">Clinical notes</span><span class="tag">AI assistant</span></div><div class="project-links"><a class="project-open" href="https://rawaaan.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/AmazingDude/rawaan" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div>
           </article>
 <article class="project-card reveal" data-category="featured ai web" data-cursor-label="LEGAL TECH" data-cursor-color="#d5c29b" style="--sector-accent:#d5c29b"><div class="project-visual sector-visual legal-visual"><div class="mini-window"><div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>MUNSIF.AI</strong><span>LEGAL INFORMATION</span></div><div class="sector-layout"><svg class="sector-symbol" viewBox="0 0 80 80" fill="none" aria-hidden="true"><path d="M40 12V65M24 68H56M15 25H65M20 25L8 48H32L20 25ZM60 25L48 48H72L60 25Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="18" r="5" fill="currentColor"/></svg><div><span class="mini-label">A CLEARER FIRST STEP</span><h4>Understand.<br>Research. Draft.</h4><div class="document-lines"><i></i><i></i><i></i></div></div></div><div class="preview-foot"><span>English · Roman Urdu</span><span>LEGAL TECH ↗</span></div></div></div><div class="project-info">
-              <div class="project-meta"><span class="project-kind">Legal technology · AI</span><span>03 — 07</span></div>
+              <div class="project-meta"><span class="project-kind">Legal technology · AI</span><span>03 / 08</span></div>
               <h3>Munsif.AI</h3>
               <p>A Pakistan-focused legal information and petition-drafting app, with English and Roman Urdu support.</p>
               <div class="project-bottom"><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Gemini</span></div><div class="project-links"><a class="project-open" href="https://munsifai.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/alishamaryamhabib777/munsif-ai" target="_blank" rel="noreferrer">Repository ↗</a></div></div>
@@ -372,15 +385,35 @@
           </article>
 
           <article class="project-card reveal" data-category="featured software" data-cursor-label="GAME TECH" data-cursor-color="#bba7f2" style="--sector-accent:#bba7f2"><div class="project-visual sector-visual game-visual"><div class="mini-window"><div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>GAMING HUB</strong><span>JAVA GAME LAUNCHER</span></div><div class="sector-layout"><svg class="controller-art" viewBox="0 0 160 95" fill="none" aria-hidden="true"><path d="M46 22H114C126 22 135 34 140 53L147 76C150 87 137 92 128 84L107 67H53L32 84C23 92 10 87 13 76L20 53C25 34 34 22 46 22Z" fill="#2b2750" stroke="#c1afff" stroke-width="2"/><path d="M40 39V61M29 50H51" stroke="#c1afff" stroke-width="6" stroke-linecap="round"/><circle cx="115" cy="43" r="5" fill="#e7b3d7"/><circle cx="127" cy="55" r="5" fill="#b5acf8"/><circle cx="103" cy="55" r="5" fill="#8ce1d2"/><circle cx="115" cy="67" r="5" fill="#e8cb8e"/></svg><div><span class="mini-label">CHOOSE. PLAY. REPEAT.</span><h4>Your next game.<br>One hub.</h4><div class="player-badges"><span>PLAYER 01</span><span>PLAYER 02</span></div></div></div><div class="preview-foot"><span>Classic games · Desktop experience</span><span>GAME TECH ↗</span></div></div></div><div class="project-info">
-              <div class="project-meta"><span class="project-kind">Game technology · Desktop</span><span>04 — 07</span></div>
+              <div class="project-meta"><span class="project-kind">Game technology · Desktop</span><span>04 / 08</span></div>
               <h3>Gaming Hub</h3>
               <p>A Java desktop game hub bringing multiple classic games together in one graphical application.</p>
               <div class="project-bottom"><div class="tags"><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">OOP</span></div><a class="project-open" href="https://github.com/faraz-pk/Gaming-Hub" target="_blank" rel="noreferrer">Repository ↗</a></div>
             </div>
           </article>
 
+          <article class="project-card reveal" data-category="featured web software events" data-cursor-label="CAMPUS &amp; GAME" data-cursor-color="#e3aaa2" style="--sector-accent:#e3aaa2">
+            <div class="project-visual sector-visual orientation-visual">
+              <div class="mini-window">
+                <div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>ON’26</strong><span>NUST ORIENTATION</span></div>
+                <div class="orientation-layout">
+                  <div class="orientation-campus" aria-hidden="true"><svg viewBox="0 0 170 120" fill="none"><path d="M10 104H160M26 104V49L85 18L144 49V104M44 104V63H126V104M66 104V76H104V104" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 49H149M52 44L85 27L118 44M39 53V57M61 53V57M83 53V57M105 53V57M127 53V57M48 68V73M122 68V73" stroke="currentColor" stroke-width="2"/><circle cx="85" cy="48" r="5"/><path d="M60 90H110L118 106C121 113 114 116 109 111L101 104H69L61 111C56 116 49 113 52 106L60 90Z" fill="#513438" stroke="#ecc6b2" stroke-width="1.5"/><path d="M65 95V103M61 99H69" stroke="#ecc6b2" stroke-width="2"/><circle cx="105" cy="97" r="2" fill="#ecc6b2"/><circle cx="110" cy="102" r="2" fill="#ecc6b2"/></svg></div>
+                  <div><span class="mini-label">A NEW CHAPTER AT NUST</span><h4>Meet the campus.<br>Play your way in.</h4><span class="orientation-team">TEAM PROJECT · WEBSITE + GAME</span></div>
+                </div>
+                <div class="orientation-milestone"><strong>700+</strong><span>NUST GAME USERS<br><b>IN THE FIRST 2 DAYS</b></span><span class="orientation-mark" aria-hidden="true">↗</span></div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta"><span class="project-kind">Campus experience · Web &amp; gaming</span><span>05 / 08</span></div>
+              <h3>ON’26 — NUST Orientation &amp; Game<span class="project-arrow" aria-hidden="true">↗</span></h3>
+              <p>A team-built website for NUST Orientation 2026, with the built-in <strong>NUST Game</strong>. The game reached <strong>700+ users in just two days</strong>.</p>
+              <div class="project-bottom"><div class="tags"><span class="tag">Orientation 2026</span><span class="tag">Web experience</span><span class="tag">NUST Game</span></div><div class="project-links"><a class="project-open" href="https://orientation.nust.edu.pk/" target="_blank" rel="noreferrer">Explore website ↗</a></div></div>
+            </div>
+          </article>
+
+
           <article class="project-card reveal" data-category="ai" data-cursor-label="MACHINE LEARNING" data-cursor-color="#9bbcf0" style="--sector-accent:#9bbcf0"><div class="project-visual sector-visual ml-visual"><div class="mini-window"><div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>APPLIED ML</strong><span>MODEL WORKSPACE</span></div><div class="ml-layout"><div class="plot-preview"><svg viewBox="0 0 220 110" fill="none" aria-hidden="true"><path d="M15 10V95H210M15 65H210M15 35H210" stroke="#53627f" stroke-width="1" opacity=".45"/><path d="M25 85C60 72 80 81 110 55S160 39 200 16" stroke="#94bafa" stroke-width="2.5"/><g fill="#a8caff"><circle cx="32" cy="77" r="3"/><circle cx="49" cy="82" r="3"/><circle cx="71" cy="65" r="3"/><circle cx="94" cy="70" r="3"/><circle cx="119" cy="47" r="3"/><circle cx="147" cy="43" r="3"/><circle cx="174" cy="33" r="3"/><circle cx="194" cy="22" r="3"/></g></svg></div><div><span class="mini-label">FROM DATA TO DECISIONS</span><h4>Train. Evaluate.<br>Understand.</h4></div></div><div class="clinical-steps"><span>Regression</span><span>Recommendations</span><span>NLP</span></div></div></div><div class="project-info">
-              <div class="project-meta"><span class="project-kind">Machine learning · Internship</span><span>05 — 07</span></div>
+              <div class="project-meta"><span class="project-kind">Machine learning · Internship</span><span>06 / 08</span></div>
               <h3>Applied Machine Learning</h3>
               <p>Weekly work across house-price regression, genetic feature selection, hybrid recommendations, and spam classification.</p>
               <div class="project-bottom"><div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">NLP</span></div><a class="project-open" href="https://github.com/alishamaryamhabib777/AppliedMachineLearning" target="_blank" rel="noreferrer">Repository ↗</a></div>
@@ -388,7 +421,7 @@
           </article>
 
           <article class="project-card reveal" data-category="software" data-cursor-label="TOURISM" data-cursor-color="#b0cf9c" style="--sector-accent:#b0cf9c"><div class="project-visual sector-visual tourism-visual"><div class="mini-window"><div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>EXPLORE PAKISTAN</strong><span>TOUR PLANNER</span></div><div class="sector-layout"><svg class="map-art" viewBox="0 0 165 110" fill="none" aria-hidden="true"><path d="M10 92L42 34L70 63L102 13L154 92H10Z" fill="#2c655c" opacity=".6"/><path d="M42 34L57 49L70 63M102 13L115 34L92 27" stroke="#bfd9b3" stroke-width="2"/><path d="M20 84C38 66 62 99 83 75S117 52 144 38" stroke="#ddce99" stroke-width="2" stroke-dasharray="4 5"/><circle cx="20" cy="84" r="5" fill="#ddce99"/><path d="M144 23A11 11 0 0 1 155 34C155 43 144 53 144 53S133 43 133 34A11 11 0 0 1 144 23Z" fill="#ddce99"/><circle cx="144" cy="34" r="4" fill="#2d574c"/></svg><div><span class="mini-label">THE JOURNEY, ORGANISED</span><h4>Find a place.<br>Plan your way.</h4></div></div><div class="clinical-steps"><span>Destinations</span><span>Hotels</span><span>Transport</span></div></div></div><div class="project-info">
-              <div class="project-meta"><span class="project-kind">Tourism · Trip planning</span><span>06 — 07</span></div>
+              <div class="project-meta"><span class="project-kind">Tourism · Trip planning</span><span>07 / 08</span></div>
               <h3>Tourist Management System</h3>
               <p>A C++ trip planner with destination distances, hotel and transport bookings, authentication, and saved booking history.</p>
               <div class="project-bottom"><div class="tags"><span class="tag">C++</span><span class="tag">STL</span><span class="tag">File I/O</span></div><a class="project-open" href="https://github.com/alishamaryamhabib777/TouristManagementSystem" target="_blank" rel="noreferrer">Repository ↗</a></div>
@@ -396,7 +429,7 @@
           </article>
 
           <article class="project-card reveal" data-category="hardware" data-cursor-label="CIRCUIT LAB" data-cursor-color="#f0c493" style="--sector-accent:#f0c493"><div class="project-visual sector-visual dice-visual"><div class="mini-window"><div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>DIGITAL DICE</strong><span>CIRCUIT LAB</span></div><div class="dice-layout"><div class="circuit-flow"><span>555 TIMER</span><b aria-hidden="true">↓</b><span>4017 COUNTER</span><b aria-hidden="true">↓</b><span>74LS47 DECODER</span></div><div class="dice-display"><svg class="seven-segment" viewBox="0 0 70 112" aria-hidden="true"><path class="segment" data-segment="a" d="M15 6H55L61 12L55 18H15L9 12Z"/><path class="segment" data-segment="b" d="M57 21L63 15L68 21V49L62 55L57 49Z"/><path class="segment" data-segment="c" d="M57 64L63 58L68 64V92L62 98L57 92Z"/><path class="segment" data-segment="d" d="M15 94H55L61 100L55 106H15L9 100Z"/><path class="segment" data-segment="e" d="M2 64L8 58L13 64V92L7 98L2 92Z"/><path class="segment" data-segment="f" d="M2 21L8 15L13 21V49L7 55L2 49Z"/><path class="segment" data-segment="g" d="M15 50H55L61 56L55 62H15L9 56Z"/></svg><output id="dice-output" class="sr-only" aria-live="polite">Dice result: 6</output></div></div><div class="preview-foot"><span>DISCRETE LOGIC · NO MCU</span><button class="roll-dice" id="roll-dice" type="button">Roll demo dice ↻</button></div></div></div><div class="project-info">
-              <div class="project-meta"><span class="project-kind">Electronics · Dice circuit</span><span>07 — 07</span></div>
+              <div class="project-meta"><span class="project-kind">Electronics · Dice circuit</span><span>08 / 08</span></div>
               <h3>Digital Dice</h3>
               <p>A six-sided digital dice circuit using a 555 timer, decade counter, and decoder—designed without a microcontroller.</p>
               <div class="project-bottom"><div class="tags"><span class="tag">Logic design</span><span class="tag">Proteus</span></div><a class="project-open" href="https://github.com/alishamaryamhabib777/Digital-Dice" target="_blank" rel="noreferrer">Repository ↗</a></div>
