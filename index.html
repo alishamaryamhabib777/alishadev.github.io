@@ -1,9 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f2ec">
+  <meta name="theme-color" content="#0a1119">
+  <meta property="og:title" content="Alisha Maryam Habib — Portfolio">
+  <meta property="og:description" content="Software Engineering, AI, and thoughtful digital products.">
+  <meta property="og:image" content="https://alishamaryamhabib777.github.io/alishadev.github.io/assets/alisha-profile-original.jpeg">
   <meta name="description" content="Alisha Maryam Habib — Software Engineering student at SEECS, NUST, building thoughtful software across AI, machine learning, and the web.">
   <title>Alisha Maryam Habib — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -181,13 +184,83 @@
       *,*::before,*::after { scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important; }
       .reveal { opacity:1;transform:none; }
     }
+  
+    /* Portrait-led visual refresh */
+    :root{--paper:#f1f5f2;--card:#ffffff;--ink:#132721;--muted:#596f68;--line:#d6e2db;--accent:#176c58;--accent-2:#d4b57f;--soft:#dcece6;--header:rgba(241,245,242,.9)}
+    [data-theme="dark"]{--paper:#0a1119;--card:#101c27;--ink:#edf5f2;--muted:#9fb1b7;--line:#233442;--accent:#8cdbc5;--accent-2:#dbc08c;--soft:#182f32;--header:rgba(10,17,25,.88)}
+    body{background-image:radial-gradient(ellipse at 90% 0%,rgba(59,119,111,.09),transparent 45%);font-size:15px}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+    .wrap{width:min(1200px,calc(100% - 64px))}
+    .header{border-bottom-color:color-mix(in srgb,var(--line) 70%,transparent)}
+    .nav{height:86px}.nav-links a{font-size:11px;letter-spacing:.03em}
+    .brand{letter-spacing:-.02em;gap:12px;min-width:0}
+    .brand-avatar{border-radius:50%;width:40px;height:40px;object-fit:cover;object-position:51% 30%;border:1px solid var(--line)}
+    .brand-name{font-size:13px;line-height:1.25;max-width:190px}.brand-name>span{display:block;color:var(--muted);font:8px "DM Mono",monospace;letter-spacing:.14em;margin-top:5px}
+    .icon-btn,.menu-btn{background:transparent;border-radius:50%}
+    .hero{padding:96px 0 110px}.hero::before{background:radial-gradient(circle,rgba(70,139,124,.13),transparent 67%)}
+    .hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:85px}
+    .hero .eyebrow{font-size:10px;color:var(--muted);letter-spacing:.1em}
+    .hero-hello{font-size:11px;letter-spacing:.18em;color:var(--accent);margin:36px 0 12px}
+    h1{font-size:clamp(49px,6.1vw,79px);letter-spacing:-.065em;line-height:1.06;margin:0 0 24px}
+    .intro{font-size:16px;line-height:1.9;max-width:570px}
+    .hero-actions{gap:12px;margin-top:32px;align-items:center}
+    .button{border-radius:9px;min-height:49px;padding:0 18px;letter-spacing:.01em;font-size:10px}
+    .button-primary{color:var(--paper);font-weight:500}.hero-email{color:var(--muted);font-size:11px;text-decoration:none;margin-left:4px}
+    .hero-email:hover{color:var(--accent)}
+    .portrait-card{margin:0;position:relative;padding:12px 12px 0;border:1px solid var(--line);border-radius:180px 180px 18px 18px;background:var(--card);box-shadow:var(--shadow)}
+    .portrait-card::before{content:"";position:absolute;inset:22px -18px -18px 22px;border:1px solid var(--line);border-radius:180px 180px 22px 22px;z-index:-1}
+    .portrait-frame{height:430px;border-radius:170px 170px 10px 10px;overflow:hidden;background:#152a2b}
+    .profile-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:51% 32%;transform:scale(1.65);transform-origin:51% 32%}
+    .portrait-card figcaption{display:flex;align-items:center;justify-content:space-between;padding:20px 10px}
+    .portrait-card strong{display:block;font-size:12px;font-weight:600}.portrait-card small{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+    .portrait-seal{font:12px "DM Mono",monospace;color:var(--accent);width:42px;height:42px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
+    .section{padding:95px 0}.section-head{margin-bottom:34px}.section-head>p{max-width:390px;color:var(--muted);font-size:13px}
+    .section-head h2{font-size:clamp(34px,4.3vw,52px);letter-spacing:-.055em;line-height:1.1}
+    .section-index{letter-spacing:.16em;color:var(--accent)}
+    .projects-section{background:color-mix(in srgb,var(--card) 45%,var(--paper))}
+    .filters{gap:9px;margin-bottom:28px}.filter-button{font-size:10px;padding:9px 14px}
+    .filter-button:hover,.filter-button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+    .project-grid{gap:24px}.project-card{border-radius:16px;background:var(--card)}
+    .project-card:hover{transform:translateY(-5px);box-shadow:0 22px 60px rgba(0,0,0,.2)}
+    .project-visual{height:246px}.project-info{padding:25px 25px 26px}.project-info h3{font-size:27px;letter-spacing:-.035em;display:flex;align-items:center;justify-content:space-between}
+    .project-arrow{color:var(--muted);font-size:20px;font-weight:400}.project-info p{font-size:13px;min-height:69px;line-height:1.8;margin-top:11px}
+    .project-meta{font-size:9px;margin-bottom:12px}.project-bottom{display:flex;align-items:flex-start;flex-direction:column;gap:20px}
+    .project-links{justify-content:flex-start;gap:17px;width:100%;border-top:1px solid var(--line);padding-top:17px}
+    .project-open{font-size:10px;color:var(--accent)}.project-open:hover{text-decoration:underline;text-underline-offset:4px}
+    .tag{font-size:9px;background:var(--paper);border-color:var(--line)}
+    .finance-visual{padding:26px;background:radial-gradient(ellipse at 20% 100%,#1b5145,#102b2b 65%,#162d31)}
+    .health-visual{padding:26px;background:radial-gradient(ellipse at 80% 20%,#214b5d,#16383f 65%,#153b38)}
+    .finance-visual::before,.finance-visual::after,.health-visual::before,.health-visual::after{display:none}
+    .mini-window{width:100%;max-width:450px;border:1px solid rgba(194,226,214,.2);border-radius:10px;background:rgba(12,27,30,.75);color:#e1f1e9;box-shadow:0 14px 30px rgba(0,0,0,.16);padding:13px 15px;transform:perspective(900px) rotateX(2deg) rotateY(-3deg);transition:transform .3s}
+    .project-card:hover .mini-window{transform:perspective(900px) rotateX(0) rotateY(0)}
+    .mini-toolbar{display:flex;align-items:center;gap:11px;border-bottom:1px solid rgba(194,226,214,.12);padding-bottom:10px;font:7px "DM Mono",monospace;letter-spacing:.07em}
+    .mini-toolbar strong{font-size:10px;letter-spacing:.1em}.mini-toolbar>span:last-child{margin-left:auto;color:#a7bbb8;font-size:6px}.window-dots{font-size:6px;color:#779b90}
+    .finance-layout{display:grid;grid-template-columns:1.4fr .8fr;gap:17px;align-items:center;padding-top:20px}.mini-label{font:6px "DM Mono",monospace;letter-spacing:.12em;color:#afc8be}
+    .mini-window h4{font:500 17px/1.3 "Space Grotesk",sans-serif;letter-spacing:-.03em;margin:8px 0;color:#edf5ef}
+    .finance-chart{height:53px;color:#c7ba7f;margin-top:10px}.finance-chart svg{width:100%;height:100%}
+    .receipt-preview{border-radius:6px;border:1px solid #385047;padding:12px 10px;background:#1a342e}
+    .receipt-line{height:3px;background:#608074;display:block;border-radius:3px;margin-top:10px}.receipt-line.short{width:65%}.review-chip{display:block;margin-top:13px;color:#b7e4c2;font-size:6px}
+    .health-layout{display:grid;grid-template-columns:56px 1fr;gap:15px;align-items:center;padding:20px 0 8px}
+    .health-emblem{font-size:32px;background:#c5eae4;color:#1a504b;border-radius:16px;height:56px;display:grid;place-items:center}
+    .waveform{height:36px;width:100%;color:#83d7ce;display:block;margin-top:6px}
+    .clinical-steps{display:flex;gap:7px;margin-top:8px}.clinical-steps span{font:6px "DM Mono",monospace;color:#b4d5d0;background:#23454b;border:1px solid #345d62;padding:7px 9px;border-radius:5px;flex:1;text-align:center}
+    .about-big{font-size:36px;letter-spacing:-.04em}.about-copy{line-height:1.95}
+    .skill{border-radius:10px;padding:21px;background:var(--card)}.skill strong{font-size:15px}.skill-label{font-size:8px;color:var(--accent)}
+    .contact-box{background:linear-gradient(115deg,#142b30,#172634);border:1px solid #294145;border-radius:16px;padding:54px}.contact-box .eyebrow{color:#9bdac7}
+    .contact-box h2{letter-spacing:-.05em}.contact-box .button-primary{background:#9bdac7;border-color:#9bdac7;color:#0c2722}.contact-box::after{background:#79a698;opacity:.16}
+    footer{font-size:10px;padding:26px 0}
+    @media(max-width:980px){.hero-grid{gap:38px;grid-template-columns:1.2fr .8fr}.portrait-frame{height:380px}.nav-links{gap:17px}.hero-email{margin-left:0}.wrap{width:calc(100% - 44px)}}
+    @media(max-width:760px){.hero{padding:66px 0 75px}.hero-grid{gap:45px;grid-template-columns:1fr}.portrait-card{max-width:360px;justify-self:center;width:100%}.portrait-frame{height:385px}h1{font-size:clamp(49px,9vw,74px)}.hero .eyebrow{font-size:9px}.hero-hello{margin-top:27px}.project-visual{height:220px}.project-info{padding:22px}.section{padding:68px 0}.about-big{font-size:31px}.contact-box{padding:32px}.section-head>p{margin-top:16px}}
+    @media(max-width:680px){.wrap{width:calc(100% - 34px)}.nav{height:76px}.nav-links{inset:76px 0 auto}.brand-name{font-size:11px;max-width:165px}.brand-name>span{font-size:7px}.brand-avatar{width:34px;height:34px}.nav-right{gap:6px}.icon-btn,.menu-btn{width:35px;min-width:35px;height:35px;padding:0}.project-info p{min-height:0}.project-visual{height:230px}.contact-actions{width:100%}.contact-actions .button{flex:1}.hero-actions .button{width:auto}.hero-actions{flex-direction:row}.hero-email{width:100%;margin-top:6px}.portrait-card{max-width:340px}.portrait-card::before{inset:15px -8px -10px 15px}}
+    @media(max-width:360px){.brand-name{max-width:135px;font-size:10px}.brand{gap:8px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .button{width:100%}.mini-toolbar>span:last-child{display:none}.mini-window h4{font-size:15px}.finance-visual,.health-visual{padding:19px}.clinical-steps{gap:4px}.clinical-steps span{padding:6px 3px}}
+
   </style>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="header">
     <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#top"><span class="brand-icon">AH</span><span>Alisha Habib</span></a>
+      <a class="brand" href="#top"><img class="brand-avatar" src="assets/alisha-profile-original.jpeg" alt="" width="38" height="38"><span class="brand-name">Alisha Maryam Habib<span>SOFTWARE ENGINEERING</span></span></a>
       <div class="nav-right">
         <ul class="nav-links" id="nav-links">
           <li><a href="#work">PROJECTS</a></li><li><a href="#about">ABOUT</a></li><li><a href="#skills">SKILLS</a></li><li><a href="#contact">CONTACT</a></li>
@@ -203,19 +276,17 @@
       <div class="wrap hero-grid">
         <div class="reveal">
           <div class="eyebrow"><span class="eyebrow-dot"></span> Software Engineering · SEECS, NUST</div>
-          <h1>Building with<br><span class="accent-word">purpose.</span></h1>
-          <p class="intro">Hi, I’m Alisha — a software engineering student exploring AI, machine learning, and the craft of making useful digital products.</p>
+          <p class="hero-hello mono">HELLO, I’M</p><h1>Alisha Maryam<br><span class="accent-word">Habib.</span></h1>
+          <p class="intro">A Software Engineering student at SEECS, NUST, building useful products across AI, finance, and healthcare. Curious about how things work. Committed to making them work better.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
-            <a class="button button-secondary" href="mailto:alishamaryamhabib7@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://github.com/alishamaryamhabib777" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="hero-email" href="mailto:alishamaryamhabib7@gmail.com">Let’s collaborate ↗</a>
           </div>
         </div>
-        <div class="hero-art reveal" aria-label="Alisha's initials in a graphic illustration">
-          <div class="art-disc"><span class="art-monogram">AH</span></div>
-          <div class="art-sticker sticker-one">IDEAS<br>INTO<br>INTERFACES</div>
-          <div class="art-sticker sticker-two">BUILT<br>WITH<br>CURIOSITY ✳</div>
-          <span class="hero-caption">ISLAMABAD, PK · 2026</span>
-        </div>
+        <figure class="portrait-card reveal">
+            <div class="portrait-frame"><img class="profile-photo" src="assets/alisha-profile-original.jpeg" alt="Alisha Maryam Habib outdoors, wearing a dark green outfit" width="749" height="735" fetchpriority="high"></div>
+            <figcaption><span><strong>Alisha Maryam Habib</strong><small>SEECS, NUST · Islamabad</small></span><span class="portrait-seal" aria-hidden="true">AH ↗</span></figcaption>
+          </figure>
       </div>
     </section>
 
@@ -229,36 +300,29 @@
           <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All work</button>
           <button class="filter-button" type="button" data-filter="featured" aria-pressed="false">Featured</button>
           <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
-          <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button><button class="filter-button" type="button" data-filter="finance" aria-pressed="false">Finance</button><button class="filter-button" type="button" data-filter="healthcare" aria-pressed="false">Healthcare</button>
           <button class="filter-button" type="button" data-filter="software" aria-pressed="false">Software</button>
           <button class="filter-button" type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
         </div>
         <div class="project-grid" id="project-grid">
-          <article class="project-card reveal" data-category="featured">
-            <div class="project-visual" style="--visual:#dff17f">
-              <span class="visual-ring"></span><span class="visual-ring r2"></span><span class="visual-shape">01</span><span class="visual-label">PROJECT / 01</span>
+          
+          <article class="project-card reveal" data-category="featured ai web finance">
+            <div class="project-visual finance-visual">
+              <div class="mini-window"><div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>RAQAM</strong><span>FINANCIAL OPERATIONS</span></div>
+                <div class="finance-layout"><div><span class="mini-label">A CLEARER CASHBOOK</span><h4>Every transaction.<br>A clearer picture.</h4><div class="finance-chart" aria-hidden="true"><svg viewBox="0 0 260 90" fill="none"><path d="M0 77L40 68L72 74L111 43L145 52L184 28L220 36L260 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M0 77L40 68L72 74L111 43L145 52L184 28L220 36L260 7V90H0Z" fill="currentColor" opacity=".08"/></svg></div></div><div class="receipt-preview"><span class="mini-label">RECEIPT → REVIEW</span><span class="receipt-line"></span><span class="receipt-line short"></span><span class="receipt-line"></span><span class="review-chip">✓ Reviewed cashbook</span></div></div>
+              </div>
             </div>
-            <div class="project-info">
-              <div class="project-meta"><span class="project-kind">Featured project</span><span>01 — 07</span></div>
-              <h3>Raqam</h3>
-              <p>Featured work from my portfolio. I’m adding the project overview and repository link next.</p>
-              <div class="project-bottom"><div class="tags"><span class="tag">Featured</span></div><span class="soon">LINK COMING SOON</span></div>
-            </div>
+            <div class="project-info"><div class="project-meta"><span class="project-kind">FINANCE · AI BOOKKEEPING</span><span>01 / 07</span></div><h3>Raqam<span class="project-arrow" aria-hidden="true">↗</span></h3><p>An AI bookkeeping project for small businesses, built around receipt OCR, transaction review, and category suggestions.</p><div class="project-bottom"><div class="tags"><span class="tag">Fintech</span><span class="tag">OCR</span><span class="tag">AI workflows</span></div><div class="project-links"><a class="project-open" href="https://raqam-alpha.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/AmazingDude/raqam" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div>
           </article>
-
-          <article class="project-card reveal" data-category="featured web">
-            <div class="project-visual" style="--visual:#e9d9ff">
-              <span class="visual-ring"></span><span class="visual-ring r2"></span><span class="visual-shape" style="background:#b6a0ff">R</span><span class="visual-label">PROJECT / 02</span>
+          <article class="project-card reveal" data-category="featured ai web healthcare">
+            <div class="project-visual health-visual">
+              <div class="mini-window"><div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>RAWAAN</strong><span>CLINICAL WORKSPACE</span></div>
+                <div class="health-layout"><div class="health-emblem" aria-hidden="true">＋</div><div><span class="mini-label">MORE PRESENT. LESS PAPERWORK.</span><h4>Care, with clarity.</h4><svg class="waveform" viewBox="0 0 260 48" fill="none" aria-hidden="true"><path d="M0 24H35L45 15L55 32L65 10L76 39L87 20L98 26H117L128 16L139 32L150 9L161 36L172 21L183 24H260" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div><div class="clinical-steps"><span>01 Record</span><span>02 Review</span><span>03 Save note</span></div>
+              </div>
             </div>
-            <div class="project-info">
-              <div class="project-meta"><span class="project-kind">Featured project</span><span>02 — 07</span></div>
-              <h3>Rawaan</h3>
-              <p>Featured work from my portfolio. I’m adding the project overview and repository link next.</p>
-              <div class="project-bottom"><div class="tags"><span class="tag">Featured</span></div><span class="soon">LINK COMING SOON</span></div>
-            </div>
+            <div class="project-info"><div class="project-meta"><span class="project-kind">HEALTHCARE · CLINICAL WORKFLOWS</span><span>02 / 07</span></div><h3>Rawaan<span class="project-arrow" aria-hidden="true">↗</span></h3><p>A workspace for doctors and therapists with session recording, reviewed clinical notes, client records, and a conversational assistant.</p><div class="project-bottom"><div class="tags"><span class="tag">Healthtech</span><span class="tag">Clinical notes</span><span class="tag">AI assistant</span></div><div class="project-links"><a class="project-open" href="https://rawaaan.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/AmazingDude/rawaan" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div>
           </article>
-
-          <article class="project-card reveal" data-category="featured ai web">
+<article class="project-card reveal" data-category="featured ai web">
             <div class="project-visual" style="--visual:#c7f0ea">
               <span class="visual-ring"></span><span class="visual-ring r2"></span><span class="visual-emoji" aria-hidden="true">⚖️</span><span class="visual-label">AI / LEGAL TECH</span>
             </div>
@@ -370,9 +434,9 @@
   <script>
     const root = document.documentElement;
     const themeButton = document.getElementById("theme-toggle");
-    const themeKey = "alisha-portfolio-theme";
+    const themeKey = "alisha-portfolio-theme-v3";
     try {
-      if (localStorage.getItem(themeKey) === "dark") root.dataset.theme = "dark";
+      root.dataset.theme = localStorage.getItem(themeKey) === "light" ? "light" : "dark";
     } catch {}
     const syncThemeButton = () => {
       const dark = root.dataset.theme === "dark";
@@ -382,8 +446,7 @@
     syncThemeButton();
     themeButton.addEventListener("click", () => {
       const dark = root.dataset.theme !== "dark";
-      if (dark) root.dataset.theme = "dark";
-      else delete root.dataset.theme;
+      root.dataset.theme = dark ? "dark" : "light";
       try { localStorage.setItem(themeKey, dark ? "dark" : "light"); } catch {}
       syncThemeButton();
     });
