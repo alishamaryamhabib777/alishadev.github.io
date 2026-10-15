@@ -323,6 +323,15 @@
     .project-info p.analytics-note{min-height:0;font-size:9px;line-height:1.7;margin:0 0 18px;color:var(--muted)}
     @media(max-width:360px){.aicon-layout{gap:10px}.aicon-visual h4{font-size:14px}.aicon-preview-stats strong{font-size:17px}.aicon-preview-stats>span{font-size:4px}.project-impact strong{font-size:21px}}
 
+  
+    .on26-image-visual{background:linear-gradient(130deg,#111926,#1c4772 70%,#131e2c);padding:0}
+    .on26-artwork{height:100%;display:grid;grid-template-columns:.9fr 1.1fr;gap:9px;padding:10px}
+    .on26-art{position:relative;min-width:0;height:100%;margin:0;overflow:hidden;border:1px solid #ffffff31;border-radius:10px;background:#0c1420;box-shadow:0 8px 20px #050a1488}
+    .on26-brand-art{background:#0a111d}.on26-game-art{background:#174676}
+    .on26-art img{width:100%;height:100%;display:block;object-fit:contain}
+    .on26-art figcaption{position:absolute;left:0;right:0;bottom:0;padding:17px 8px 7px;background:linear-gradient(transparent,#08101be8);font:600 7px "DM Mono",monospace;letter-spacing:.1em;color:#f2f5fa}
+    @media(max-width:360px){.on26-artwork{gap:6px;padding:8px}.on26-art figcaption{font-size:6px;padding-left:5px}}
+
   </style>
 </head>
 <body>
@@ -410,17 +419,12 @@
           </article>
 
           <article class="project-card reveal" data-category="featured web software events" data-cursor-label="CAMPUS &amp; GAME" data-cursor-color="#e3aaa2" style="--sector-accent:#e3aaa2">
-            <div class="project-visual sector-visual orientation-visual">
-              <div class="mini-window">
-                <div class="mini-toolbar"><span class="window-dots">● ● ●</span><strong>ON’26</strong><span>NUST ORIENTATION</span></div>
-                <div class="orientation-layout">
-                  <div class="orientation-campus" aria-hidden="true"><svg viewBox="0 0 170 120" fill="none"><path d="M10 104H160M26 104V49L85 18L144 49V104M44 104V63H126V104M66 104V76H104V104" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 49H149M52 44L85 27L118 44M39 53V57M61 53V57M83 53V57M105 53V57M127 53V57M48 68V73M122 68V73" stroke="currentColor" stroke-width="2"/><circle cx="85" cy="48" r="5"/><path d="M60 90H110L118 106C121 113 114 116 109 111L101 104H69L61 111C56 116 49 113 52 106L60 90Z" fill="#513438" stroke="#ecc6b2" stroke-width="1.5"/><path d="M65 95V103M61 99H69" stroke="#ecc6b2" stroke-width="2"/><circle cx="105" cy="97" r="2" fill="#ecc6b2"/><circle cx="110" cy="102" r="2" fill="#ecc6b2"/></svg></div>
-                  <div><span class="mini-label">A NEW CHAPTER AT NUST</span><h4>Meet the campus.<br>Play your way in.</h4><span class="orientation-team">TEAM PROJECT · WEBSITE + GAME</span></div>
-                </div>
-                <div class="orientation-milestone"><strong>700+</strong><span>NUST GAME USERS<br><b>IN THE FIRST 2 DAYS</b></span><span class="orientation-mark" aria-hidden="true">↗</span></div>
+            <div class="project-visual on26-image-visual">
+              <div class="on26-artwork" aria-label="ON’26 Orientation and NUST Game artwork">
+                <figure class="on26-art on26-brand-art"><img src="assets/on26-orientation.jpg" alt="ON’26 Orientation 2026 emblem artwork"><figcaption>ORIENTATION · 2026</figcaption></figure>
+                <figure class="on26-art on26-game-art"><img src="assets/on26-game.jpg" alt="Pixel-art NUST Game campus screen"><figcaption>NUST GAME · LIVE</figcaption></figure>
               </div>
-            </div>
-            <div class="project-info">
+            </div>       <div class="project-info">
               <div class="project-meta"><span class="project-kind">Campus experience · Web &amp; gaming</span><span>05 / 09</span></div>
               <h3>ON’26 — NUST Orientation &amp; Game<span class="project-arrow" aria-hidden="true">↗</span></h3>
               <p>A team-built website for NUST Orientation 2026, with the built-in <strong>NUST Game</strong>. The game reached <strong>700+ users in just two days</strong>.</p>
