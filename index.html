@@ -195,6 +195,7 @@
     .nav{height:86px}.nav-links a{font-size:11px;letter-spacing:.03em}
     .brand{letter-spacing:-.02em;gap:12px;min-width:0}
     .brand-avatar{border-radius:50%;width:40px;height:40px;object-fit:cover;object-position:51% 30%;border:1px solid var(--line)}
+    .brand-avatar{display:block;overflow:hidden;flex-shrink:0}.brand-avatar img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(3.4);transform-origin:51% 31%}
     .brand-name{font-size:13px;line-height:1.25;max-width:190px}.brand-name>span{display:block;color:var(--muted);font:8px "DM Mono",monospace;letter-spacing:.14em;margin-top:5px}
     .icon-btn,.menu-btn{background:transparent;border-radius:50%}
     .hero{padding:96px 0 110px}.hero::before{background:radial-gradient(circle,rgba(70,139,124,.13),transparent 67%)}
@@ -210,7 +211,7 @@
     .portrait-card{margin:0;position:relative;padding:12px 12px 0;border:1px solid var(--line);border-radius:180px 180px 18px 18px;background:var(--card);box-shadow:var(--shadow)}
     .portrait-card::before{content:"";position:absolute;inset:22px -18px -18px 22px;border:1px solid var(--line);border-radius:180px 180px 22px 22px;z-index:-1}
     .portrait-frame{height:430px;border-radius:170px 170px 10px 10px;overflow:hidden;background:#152a2b}
-    .profile-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:51% 32%;transform:scale(1.65);transform-origin:51% 32%}
+    .profile-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:51% 32%;transform:scale(2.2);transform-origin:51% 32%}
     .portrait-card figcaption{display:flex;align-items:center;justify-content:space-between;padding:20px 10px}
     .portrait-card strong{display:block;font-size:12px;font-weight:600}.portrait-card small{display:block;color:var(--muted);font-size:10px;margin-top:5px}
     .portrait-seal{font:12px "DM Mono",monospace;color:var(--accent);width:42px;height:42px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
@@ -260,7 +261,7 @@
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="header">
     <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#top"><img class="brand-avatar" src="assets/alisha-profile-original.jpeg" alt="" width="38" height="38"><span class="brand-name">Alisha Maryam Habib<span>SOFTWARE ENGINEERING</span></span></a>
+      <a class="brand" href="#top"><span class="brand-avatar"><img src="assets/alisha-profile-original.jpeg" alt="" width="749" height="735"></span><span class="brand-name">Alisha Maryam Habib<span>SOFTWARE ENGINEERING</span></span></a>
       <div class="nav-right">
         <ul class="nav-links" id="nav-links">
           <li><a href="#work">PROJECTS</a></li><li><a href="#about">ABOUT</a></li><li><a href="#skills">SKILLS</a></li><li><a href="#contact">CONTACT</a></li>
