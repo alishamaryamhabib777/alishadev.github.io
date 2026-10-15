@@ -1,933 +1,359 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Alisha Maryam Habib | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Alisha Maryam Habib — Software Engineering student at SEECS, NUST. Projects in AI, machine learning, and software development.">
+  <title>Alisha Maryam Habib — Software Engineer & Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0f1f3d;
-      --mid: #1b3a6b;
-      --accent: #c8973a;
-      --gold-light: #e8c97a;
-      --cream: #f9f5ef;
-      --off-white: #f2ede4;
-      --text: #2a2a2a;
-      --muted: #6b6860;
-      --white: #ffffff;
+      color-scheme: dark;
+      --bg: #10131b;
+      --surface: #171b25;
+      --surface-2: #1d2330;
+      --text: #f4f3ef;
+      --muted: #a8adba;
+      --line: rgba(255,255,255,.11);
+      --accent: #b7f36b;
+      --accent-ink: #15200e;
+      --violet: #b3a0ff;
+      --header: rgba(16,19,27,.78);
+      --shadow: 0 24px 60px rgba(0,0,0,.24);
+      --max: 1120px;
     }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f6f7f3;
+      --surface: #fff;
+      --surface-2: #edf0e9;
+      --text: #171b23;
+      --muted: #606a73;
+      --line: rgba(23,27,35,.12);
+      --accent: #436d15;
+      --accent-ink: #f8ffe9;
+      --violet: #6651b5;
+      --header: rgba(246,247,243,.82);
+      --shadow: 0 24px 60px rgba(37,49,24,.09);
     }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 48px;
-      background: rgba(15,31,61,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(200,151,58,0.2);
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: "Manrope", sans-serif; line-height: 1.6; transition: background .25s, color .25s; }
+    a { color: inherit; }
+    button { font: inherit; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+    .progress { position: fixed; inset: 0 auto auto 0; height: 3px; width: 0; z-index: 30; background: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .mono, .eyebrow, .project-number, .tag, .nav-links a, .button { font-family: "DM Mono", monospace; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: var(--header); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    .nav { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; letter-spacing: -.04em; }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--accent); color: var(--accent-ink); font-size: 13px; }
+    .nav-right, .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links { list-style: none; margin: 0; padding: 0; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+    .icon-button, .menu-button { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid var(--line); border-radius: 12px; color: var(--text); background: var(--surface); cursor: pointer; transition: transform .2s, border-color .2s; }
+    .icon-button:hover, .menu-button:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .menu-button { display: none; }
+    .hero { position: relative; overflow: hidden; padding: clamp(82px, 12vw, 148px) 0 100px; }
+    .hero::before { content: ""; position: absolute; width: 620px; height: 620px; right: -150px; top: -220px; border-radius: 50%; background: radial-gradient(circle, rgba(183,243,107,.13), transparent 67%); pointer-events: none; }
+    .hero::after { content: ""; position: absolute; width: 1px; height: 230px; left: 50%; bottom: -80px; background: linear-gradient(transparent, var(--line)); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1fr) 280px; align-items: end; gap: 64px; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--accent); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 16%, transparent); }
+    h1 { max-width: 800px; margin: 24px 0 22px; font-size: clamp(48px, 8vw, 92px); line-height: .98; letter-spacing: -.075em; }
+    h1 span { color: var(--accent); }
+    .hero-copy { max-width: 610px; margin: 0; color: var(--muted); font-size: clamp(16px, 2vw, 19px); line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 18px; border: 1px solid var(--line); border-radius: 13px; text-decoration: none; font-size: 12px; transition: transform .2s, background .2s, border-color .2s; }
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 500; }
+    .button-quiet { color: var(--text); background: var(--surface); }
+    .hero-card { position: relative; min-height: 260px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, var(--surface-2), var(--surface)); box-shadow: var(--shadow); transform: rotate(2deg); }
+    .hero-card::after { content: "✳"; position: absolute; right: 21px; top: 4px; color: var(--accent); font-size: 96px; line-height: 1; opacity: .8; }
+    .hero-card .mono { z-index: 1; color: var(--muted); font-size: 11px; }
+    .card-note { position: relative; z-index: 1; }
+    .card-note strong { display: block; font-size: 23px; letter-spacing: -.05em; line-height: 1.2; }
+    .card-note span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; }
+    .section { padding: 92px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 34px; }
+    .section-head h2 { margin: 9px 0 0; font-size: clamp(32px, 5vw, 50px); line-height: 1.05; letter-spacing: -.065em; }
+    .section-head p { max-width: 430px; margin: 0; color: var(--muted); font-size: 14px; }
+    .eyebrow-num { color: var(--muted); font-size: 11px; }
+    .projects { background: var(--surface); border-block: 1px solid var(--line); }
+    .project-list { display: grid; gap: 14px; }
+    .project-card { position: relative; display: grid; grid-template-columns: 78px minmax(0,1fr) auto; align-items: center; gap: 28px; min-height: 178px; padding: 26px 30px; border: 1px solid var(--line); border-radius: 20px; background: var(--bg); overflow: hidden; transition: transform .25s, border-color .25s, box-shadow .25s; }
+    .project-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 58%, var(--line)); box-shadow: var(--shadow); }
+    .project-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--card-accent, var(--accent)); transform: scaleY(0); transform-origin: bottom; transition: transform .25s; }
+    .project-card:hover::before { transform: scaleY(1); }
+    .project-number { align-self: start; padding-top: 6px; color: var(--muted); font-size: 12px; }
+    .project-main { min-width: 0; }
+    .project-kicker { margin: 0 0 6px; color: var(--card-accent, var(--accent)); font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
+    .project-card h3 { margin: 0; font-size: clamp(22px, 3vw, 32px); letter-spacing: -.055em; }
+    .project-card p { max-width: 620px; margin: 9px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 10px; }
+    .project-link { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 50%; color: var(--text); text-decoration: none; transition: background .2s, color .2s, transform .2s; }
+    .project-link:hover { background: var(--accent); color: var(--accent-ink); transform: rotate(45deg); }
+    .project-link.disabled { opacity: .38; cursor: default; }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; }
+    .about-statement { margin: 0; font-size: clamp(23px, 3vw, 34px); line-height: 1.42; letter-spacing: -.05em; }
+    .about-statement em { color: var(--violet); font-style: normal; }
+    .about-copy { color: var(--muted); font-size: 15px; line-height: 1.9; }
+    .about-copy p { margin: 0 0 16px; }
+    .about-facts { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .fact { padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: 11px; }
+    .skills { padding-top: 10px; }
+    .skill-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .skill { min-height: 100px; padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); transition: transform .2s, border-color .2s; }
+    .skill:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .skill small { display: block; color: var(--muted); font-family: "DM Mono",monospace; font-size: 10px; }
+    .skill strong { display: block; margin-top: 14px; font-size: 15px; letter-spacing: -.03em; }
+    .contact { padding: 64px 0 82px; }
+    .contact-box { position: relative; overflow: hidden; display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: clamp(28px,5vw,56px); border: 1px solid var(--line); border-radius: 24px; background: var(--surface); }
+    .contact-box::after { content: ""; position: absolute; width: 270px; height: 270px; right: 13%; top: -200px; border-radius: 50%; background: var(--accent); filter: blur(100px); opacity: .14; pointer-events: none; }
+    .contact-box h2 { margin: 10px 0; font-size: clamp(32px,5vw,54px); line-height: 1; letter-spacing: -.07em; }
+    .contact-box p { margin: 0; color: var(--muted); font-size: 14px; }
+    .contact-box .button { position: relative; z-index: 1; white-space: nowrap; }
+    footer { padding: 23px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-row a { color: var(--text); text-decoration: none; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .toast { position: fixed; bottom: 24px; left: 50%; z-index: 40; transform: translate(-50%,20px); opacity: 0; pointer-events: none; padding: 10px 15px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface-2); color: var(--text); font-size: 12px; transition: .2s; }
+    .toast.show { opacity: 1; transform: translate(-50%,0); }
+    @media (max-width: 760px) {
+      .wrap { width: min(var(--max), calc(100% - 32px)); }
+      .nav { height: 64px; }
+      .menu-button { display: grid; }
+      .nav-right { gap: 9px; }
+      .nav-links { display: none; position: absolute; inset: 64px 0 auto; padding: 14px 16px 18px; border-bottom: 1px solid var(--line); background: var(--bg); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 13px 8px; }
+      .hero { padding: 83px 0 76px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      .hero-card { max-width: 340px; min-height: 205px; }
+      .hero::after { left: 16px; }
+      .section { padding: 70px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 12px; }
+      .project-card { grid-template-columns: 36px minmax(0,1fr); gap: 15px; padding: 21px 18px; }
+      .project-link { grid-column: 2; width: auto; justify-self: start; height: 37px; padding: 0 14px; border-radius: 10px; }
+      .project-link:not(.disabled)::after { content: "Open project"; margin-left: 8px; font: 10px "DM Mono",monospace; }
+      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .skill-grid { grid-template-columns: repeat(2,1fr); }
+      .contact-box { align-items: flex-start; flex-direction: column; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
     }
-    nav .logo {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold-light);
-      font-size: 1.1rem;
-      letter-spacing: 0.04em;
+    @media (max-width: 380px) {
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .skill-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .skill { padding: 14px; }
+      .project-card { grid-template-columns: 28px minmax(0,1fr); gap: 10px; }
     }
-    nav ul { list-style: none; display: flex; gap: 36px; }
-    nav a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--gold-light); }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      background: var(--navy);
-      display: flex; align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 120px 48px 80px;
-    }
-    .hero-bg {
-      position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(27,58,107,0.6) 0%, transparent 70%),
-        radial-gradient(ellipse 30% 40% at 20% 80%, rgba(200,151,58,0.12) 0%, transparent 60%);
-    }
-    .hero-grid {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(200,151,58,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,151,58,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-inner {
-      position: relative; z-index: 1;
-      max-width: 900px;
-    }
-    .hero-badge {
-      display: inline-block;
-      border: 1px solid rgba(200,151,58,0.5);
-      color: var(--gold-light);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 2px;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.2s forwards;
-    }
-    h1.hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 8px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.4s forwards;
-    }
-    h1.hero-name span { color: var(--accent); }
-    .hero-title {
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      color: rgba(255,255,255,0.55);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.55s forwards;
-    }
-    .hero-desc {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.65);
-      max-width: 520px;
-      line-height: 1.8;
-      margin-bottom: 40px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.7s forwards;
-    }
-    .hero-stats {
-      display: flex; gap: 40px; flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.85s forwards;
-      margin-bottom: 44px;
-    }
-    .stat-item { border-left: 2px solid var(--accent); padding-left: 14px; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
-    .hero-cta {
-      display: flex; gap: 16px; flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.7s 1s forwards;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--navy);
-      padding: 13px 32px;
-      border-radius: 3px;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.3);
-      color: rgba(255,255,255,0.8);
-      padding: 13px 32px;
-      border-radius: 3px;
-      font-weight: 400;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
-
-    /* ── SECTIONS COMMON ── */
-    section { padding: 96px 48px; }
-    .section-inner { max-width: 900px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 48px;
-      line-height: 1.1;
-    }
-    .divider {
-      width: 48px; height: 2px;
-      background: var(--accent);
-      margin: 16px 0 48px;
-    }
-
-    /* ── ABOUT ── */
-    #about { background: var(--white); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .about-text p {
-      font-size: 1rem;
-      line-height: 1.85;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-    .about-facts { display: flex; flex-direction: column; gap: 16px; }
-    .fact-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 18px;
-      background: var(--cream);
-      border-radius: 4px;
-      border-left: 3px solid var(--accent);
-    }
-    .fact-key { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
-    .fact-val { font-size: 0.9rem; font-weight: 500; color: var(--navy); }
-
-    /* ── EDUCATION ── */
-    #education { background: var(--cream); }
-    .edu-list { display: flex; flex-direction: column; gap: 24px; }
-    .edu-card {
-      background: var(--white);
-      border-radius: 6px;
-      padding: 28px 32px;
-      border-left: 4px solid var(--accent);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      transition: box-shadow 0.2s;
-    }
-    .edu-card:hover { box-shadow: 0 8px 32px rgba(15,31,61,0.09); }
-    .edu-inst {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-    .edu-degree { font-size: 0.88rem; color: var(--muted); margin-bottom: 6px; }
-    .edu-award {
-      display: inline-block;
-      background: rgba(200,151,58,0.12);
-      color: var(--accent);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 2px;
-    }
-    .edu-year {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--accent);
-      white-space: nowrap;
-      font-weight: 700;
-    }
-    .edu-score {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: right;
-    }
-
-    /* ── SKILLS ── */
-    #skills { background: var(--navy); }
-    #skills .section-title { color: var(--white); }
-    #skills .section-label { color: var(--gold-light); }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-    }
-    .skill-chip {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(200,151,58,0.2);
-      border-radius: 4px;
-      padding: 18px 20px;
-      text-align: center;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .skill-chip:hover {
-      background: rgba(200,151,58,0.1);
-      border-color: rgba(200,151,58,0.5);
-    }
-    .skill-chip .sk-icon { font-size: 1.6rem; margin-bottom: 8px; }
-    .skill-chip .sk-name {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.8);
-      font-weight: 500;
-    }
-    .skill-chip .sk-sub {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.35);
-      margin-top: 3px;
-    }
-
-    /* ── PROJECTS ── */
-    #projects { background: var(--off-white); }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 28px;
-    }
-    .proj-card {
-      background: var(--white);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid rgba(15,31,61,0.07);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .proj-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(15,31,61,0.12);
-    }
-    .proj-header {
-      background: var(--navy);
-      padding: 22px 24px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    .proj-sem {
-      font-size: 0.66rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--gold-light);
-      background: rgba(200,151,58,0.15);
-      padding: 3px 9px;
-      border-radius: 2px;
-    }
-    .proj-lang {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.4);
-      font-weight: 400;
-    }
-    .proj-body { padding: 20px 24px 24px; }
-    .proj-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .proj-desc {
-      font-size: 0.87rem;
-      line-height: 1.7;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-size: 0.7rem;
-      background: var(--cream);
-      color: var(--navy);
-      padding: 3px 10px;
-      border-radius: 2px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-    .proj-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-    .proj-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.7rem;
-      color: #3a9e5c;
-      font-weight: 500;
-    }
-    .proj-status.ongoing { color: var(--accent); }
-    .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-
-    /* ── GitHub Button ── */
-    .btn-github {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid rgba(200,151,58,0.35);
-      padding: 5px 12px;
-      border-radius: 3px;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
-    .btn-github:hover {
-      background: rgba(200,151,58,0.1);
-      border-color: var(--accent);
-      color: var(--gold-light);
-    }
-    .btn-github svg {
-      width: 13px; height: 13px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-
-    /* ── ACHIEVEMENTS ── */
-    #achievements { background: var(--white); }
-    .ach-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .ach-card {
-      display: flex;
-      gap: 16px;
-      padding: 22px;
-      background: var(--cream);
-      border-radius: 6px;
-      align-items: flex-start;
-      transition: box-shadow 0.2s;
-    }
-    .ach-card:hover { box-shadow: 0 6px 24px rgba(15,31,61,0.07); }
-    .ach-icon {
-      font-size: 1.6rem;
-      flex-shrink: 0;
-      width: 46px; height: 46px;
-      background: rgba(200,151,58,0.12);
-      border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .ach-title { font-weight: 500; font-size: 0.92rem; color: var(--navy); margin-bottom: 4px; }
-    .ach-sub { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-
-    /* ── CONTACT ── */
-    #contact {
-      background: var(--navy);
-      text-align: center;
-    }
-    #contact .section-title { color: var(--white); }
-    #contact .section-label { color: var(--gold-light); }
-    #contact .divider { margin: 16px auto 48px; }
-    .contact-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 48px;
-    }
-    .contact-item {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(200,151,58,0.2);
-      border-radius: 6px;
-      padding: 18px 28px;
-      min-width: 200px;
-      transition: background 0.2s;
-    }
-    .contact-item:hover { background: rgba(200,151,58,0.08); }
-    .contact-item .ci-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-light); margin-bottom: 6px; }
-    .contact-item a, .contact-item p {
-      font-size: 0.88rem; color: rgba(255,255,255,0.75); text-decoration: none;
-    }
-    .contact-item a:hover { color: var(--gold-light); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #080e1c;
-      color: rgba(255,255,255,0.3);
-      text-align: center;
-      padding: 28px;
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
-    }
-    footer span { color: var(--accent); }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      nav { padding: 16px 20px; }
-      nav ul { gap: 18px; }
-      section { padding: 64px 24px; }
-      #hero { padding: 100px 24px 64px; }
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .ach-list { grid-template-columns: 1fr; }
-      .edu-card { flex-direction: column; gap: 8px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Alisha Maryam Habib home"><span class="brand-mark">AH</span><span>Alisha Habib</span></a>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">☼</button>
+        <button class="menu-button" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+      </div>
+    </nav>
+  </header>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">AMH</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#achievements">Awards</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">SEECS · NUST · Islamabad</div>
-    <h1 class="hero-name">Alisha Maryam<br><span>Habib</span></h1>
-    <p class="hero-title">BE Software Engineering &nbsp;·&nbsp; Batch 2025 &nbsp;·&nbsp; BESE-16A</p>
-    <p class="hero-desc">
-      Second-semester undergraduate passionate about building purposeful software.
-      Driven by curiosity, shaped by discipline, committed to crafting elegant solutions.
-    </p>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">3.53</div>
-        <div class="stat-label">CGPA</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">152</div>
-        <div class="stat-label">NET Score</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">A+</div>
-        <div class="stat-label">Matric & F.Sc.</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">🥇</div>
-        <div class="stat-label">CAS Gold Medal</div>
-      </div>
-    </div>
-    <div class="hero-cta">
-      <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <div class="section-label">Who I Am</div>
-    <h2 class="section-title">About Me</h2>
-    <div class="divider"></div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I'm a 3rd-semester Software Engineering student at SEECS, NUST — one of Pakistan's 
-          top engineering schools. With a CGPA of 3.53, I'm building a strong academic 
-          foundation across programming, mathematics, and computer architecture.
-        </p>
-        <p>
-          My background in military-affiliated schools has instilled discipline and a 
-          results-driven work ethic. I thrive in structured environments and enjoy tackling 
-          complex problems through clean, well-thought-out code.
-        </p>
-        <p>
-          Currently working with C++, Java, and exploring web development. I am actively 
-          seeking remote internship opportunities to translate academic knowledge into 
-          real-world impact.
-        </p>
-      </div>
-      <div class="about-facts">
-        <div class="fact-row">
-          <span class="fact-key">Institution</span>
-          <span class="fact-val">NUST — SEECS</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-key">Programme</span>
-          <span class="fact-val">BE Software Engineering</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-key">Batch / Class</span>
-          <span class="fact-val">2025 · BESE-16A</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-key">CMS ID</span>
-          <span class="fact-val">555847</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-key">CGPA</span>
-          <span class="fact-val">3.53 / 4.0</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-key">Location</span>
-          <span class="fact-val">Islamabad, Pakistan</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-inner">
-    <div class="section-label">Academic Background</div>
-    <h2 class="section-title">Education</h2>
-    <div class="divider"></div>
-    <div class="edu-list">
-
-      <div class="edu-card">
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
         <div>
-          <div class="edu-inst">National University of Sciences &amp; Technology (NUST)</div>
-          <div class="edu-degree">BE Software Engineering &nbsp;·&nbsp; SEECS &nbsp;·&nbsp; CGPA: 3.53</div>
-          <span class="edu-award">Currently Enrolled — Semester 3</span>
-        </div>
-        <div>
-          <div class="edu-year">2025–</div>
-          <div class="edu-score">NET Score: 152</div>
-        </div>
-      </div>
-
-      <div class="edu-card">
-        <div>
-          <div class="edu-inst">Army Public School, Humayun Road</div>
-          <div class="edu-degree">F.Sc. Pre-Engineering &nbsp;·&nbsp; 1025 / 1100</div>
-          <span class="edu-award">A+ Grade</span>
-        </div>
-        <div>
-          <div class="edu-year">2025</div>
-          <div class="edu-score">93.2%</div>
-        </div>
-      </div>
-
-      <div class="edu-card">
-        <div>
-          <div class="edu-inst">Fazaia College Sakesar</div>
-          <div class="edu-degree">Matriculation (Science) &nbsp;·&nbsp; 1052 / 1100</div>
-          <span class="edu-award">🥇 Chief of Air Staff Gold Medal &nbsp;·&nbsp; A+ Grade</span>
-        </div>
-        <div>
-          <div class="edu-year">2023</div>
-          <div class="edu-score">95.6%</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-inner">
-    <div class="section-label">What I Work With</div>
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="divider" style="background:var(--accent);"></div>
-    <div class="skills-grid">
-      <div class="skill-chip">
-        <div class="sk-icon">⚡</div>
-        <div class="sk-name">C++</div>
-        <div class="sk-sub">OOP · STL · File I/O</div>
-      </div>
-      <div class="skill-chip">
-        <div class="sk-icon">☕</div>
-        <div class="sk-name">Java</div>
-        <div class="sk-sub">OOP · GUI · Swing</div>
-      </div>
-      <div class="skill-chip">
-        <div class="sk-icon">🌐</div>
-        <div class="sk-name">HTML &amp; CSS</div>
-        <div class="sk-sub">Web Fundamentals</div>
-      </div>
-      <div class="skill-chip">
-        <div class="sk-icon">🔢</div>
-        <div class="sk-name">Digital Logic</div>
-        <div class="sk-sub">CALD · ICs · Gates</div>
-      </div>
-      <div class="skill-chip">
-        <div class="sk-icon">🔗</div>
-        <div class="sk-name">Git &amp; GitHub</div>
-        <div class="sk-sub">Version Control</div>
-      </div>
-      <div class="skill-chip">
-        <div class="sk-icon">📐</div>
-        <div class="sk-name">Discrete Maths</div>
-        <div class="sk-sub">Logic · Graph Theory</div>
-      </div>
-      <div class="skill-chip">
-        <div class="sk-icon">∑</div>
-        <div class="sk-name">Linear Algebra</div>
-        <div class="sk-sub">Matrices · ODE</div>
-      </div>
-      <div class="skill-chip">
-        <div class="sk-icon">🧠</div>
-        <div class="sk-name">OOP Design</div>
-        <div class="sk-sub">Patterns · Modular Arch</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-inner">
-    <div class="section-label">What I've Built</div>
-    <h2 class="section-title">Projects</h2>
-    <div class="divider"></div>
-    <div class="projects-grid">
-
-      <!-- Tourist Management System -->
-      <div class="proj-card">
-        <div class="proj-header">
-          <span class="proj-sem">Semester 1 · FOCP</span>
-          <span class="proj-lang">C++</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">Tourist Management System</div>
-          <p class="proj-desc">
-            A full-featured console application covering sign-up/login, distance calculation 
-            (Haversine formula), hotel booking, transport management, and billing — with 
-            persistent file-based storage.
-          </p>
-          <div class="proj-tags">
-            <span class="tag">Vectors</span>
-            <span class="tag">File Handling</span>
-            <span class="tag">Structs &amp; Classes</span>
-            <span class="tag">Pointers</span>
-            <span class="tag">Haversine Formula</span>
-            <span class="tag">Bubble Sort</span>
+          <div class="eyebrow"><span class="pulse"></span> Software Engineering · SEECS, NUST</div>
+          <h1>Ideas into<br><span>useful things.</span></h1>
+          <p class="hero-copy">Hi, I’m Alisha — a software engineering student interested in AI, machine learning, and building thoughtful digital experiences.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+            <a class="button button-quiet" href="mailto:alishamaryamhabib7@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="proj-footer">
-            <div class="proj-status">
-              <span class="dot"></span> Completed
+        </div>
+        <aside class="hero-card" aria-label="A little about Alisha">
+          <span class="mono">A LITTLE ABOUT ME / 01</span>
+          <div class="card-note"><strong>Curious by nature.<br>Builder by practice.</strong><span>Based in Islamabad, Pakistan</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section projects" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow-num mono">01 / SELECTED WORK</span><h2>Projects in progress<br>and shipped.</h2></div>
+          <p>A few things I’ve worked on, in the order I’d like you to see them. Pick a project to explore.</p>
+        </div>
+        <div class="project-list">
+          <article class="project-card reveal" style="--card-accent:#b7f36b">
+            <span class="project-number">01</span>
+            <div class="project-main">
+              <p class="project-kicker">Featured project</p>
+              <h3>Raqam</h3>
+              <p>A selected project from my portfolio.</p>
+              <div class="project-tags"><span class="tag">Featured</span></div>
             </div>
-            <a href="https://github.com/alishamaryamhabib777/TouristManagementSystem" target="_blank" class="btn-github">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
+            <span class="project-link disabled" aria-label="Raqam repository link not provided">↗</span>
+          </article>
 
-      <!-- Game Hub -->
-      <div class="proj-card">
-        <div class="proj-header">
-          <span class="proj-sem">Semester 2 · OOP</span>
-          <span class="proj-lang">Java · GUI</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">Game Hub Desktop Application</div>
-          <p class="proj-desc">
-            A multi-game Java desktop platform with a centralized launcher. Integrates 
-            multiple classic games in one GUI-based app, supporting both single-player 
-            and multiplayer modes with full OOP architecture.
-          </p>
-          <div class="proj-tags">
-            <span class="tag">Inheritance</span>
-            <span class="tag">Polymorphism</span>
-            <span class="tag">Swing / GUI</span>
-            <span class="tag">Modular Design</span>
-            <span class="tag">Multiplayer</span>
-          </div>
-          <div class="proj-footer">
-            <div class="proj-status ongoing">
-              <span class="dot"></span> Completed
+          <article class="project-card reveal" style="--card-accent:#b3a0ff">
+            <span class="project-number">02</span>
+            <div class="project-main">
+              <p class="project-kicker">Featured project</p>
+              <h3>Rawaan</h3>
+              <p>A selected project from my portfolio.</p>
+              <div class="project-tags"><span class="tag">Featured</span></div>
             </div>
-            <a href="https://github.com/faraz-pk/Gaming-Hub" target="_blank" class="btn-github">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
+            <span class="project-link disabled" aria-label="Rawaan repository link not provided">↗</span>
+          </article>
 
-      <!-- Digital Dice -->
-      <div class="proj-card">
-        <div class="proj-header">
-          <span class="proj-sem">Semester 2 · CALD</span>
-          <span class="proj-lang">Hardware · ICs</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">Digital Dice (CALD Project)</div>
-          <p class="proj-desc">
-            Hardware design project implementing a digital dice using integrated circuits 
-            and logic design principles — applying Boolean algebra, combinational circuits, 
-            and display decoding.
-          </p>
-          <div class="proj-tags">
-            <span class="tag">Logic Gates</span>
-            <span class="tag">ICs</span>
-            <span class="tag">Boolean Algebra</span>
-            <span class="tag">7-Segment Display</span>
-          </div>
-          <div class="proj-footer">
-            <div class="proj-status">
-              <span class="dot"></span> Completed
+          <article class="project-card reveal" style="--card-accent:#70d7da">
+            <span class="project-number">03</span>
+            <div class="project-main">
+              <p class="project-kicker">AI · Legal technology</p>
+              <h3>Munsif.AI</h3>
+              <p>A Pakistan-focused legal information and petition-drafting experience, with English and Roman Urdu support.</p>
+              <div class="project-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Gemini API</span></div>
             </div>
-            <a href="https://github.com/alishamaryamhabib777/Digital-Dice" target="_blank" class="btn-github">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
+            <a class="project-link" href="https://github.com/alishamaryamhabib777/munsif-ai" target="_blank" rel="noreferrer" aria-label="Open Munsif.AI repository">↗</a>
+          </article>
 
-      <!-- LED Traffic Light -->
-      <div class="proj-card">
-        <div class="proj-header">
-          <span class="proj-sem">Semester 1 · Applied Physics</span>
-          <span class="proj-lang">Electronics</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-title">LED Traffic Light Circuit</div>
-          <p class="proj-desc">
-            Designed and assembled a functional LED traffic light circuit demonstrating 
-            electronic components, circuit analysis, and practical physics lab skills.
-          </p>
-          <div class="proj-tags">
-            <span class="tag">LEDs</span>
-            <span class="tag">Circuit Design</span>
-            <span class="tag">Electronics</span>
-          </div>
-          <div class="proj-footer">
-            <div class="proj-status">
-              <span class="dot"></span> Completed
+          <article class="project-card reveal" style="--card-accent:#ffad80">
+            <span class="project-number">04</span>
+            <div class="project-main">
+              <p class="project-kicker">Java · Desktop game</p>
+              <h3>Gaming Hub</h3>
+              <p>A multi-game Java desktop app that brings classic games together in one graphical experience.</p>
+              <div class="project-tags"><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">OOP</span></div>
             </div>
+            <a class="project-link" href="https://github.com/faraz-pk/Gaming-Hub" target="_blank" rel="noreferrer" aria-label="Open Gaming Hub repository">↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow-num mono">02 / THE PERSON</span><h2>A bit about me.</h2></div>
+        </div>
+        <div class="about-grid reveal">
+          <p class="about-statement">I like work that mixes <em>curiosity</em> with practical problem-solving.</p>
+          <div class="about-copy">
+            <p>I’m pursuing a BE in Software Engineering at SEECS, NUST. I enjoy learning how systems work and using that knowledge to make projects clear, useful, and easy to explore.</p>
+            <p>My recent work spans AI-assisted products, applied machine learning, Java desktop apps, and C++ projects. I’m open to research internships and collaborative projects.</p>
+            <div class="about-facts"><span class="fact">🎓 SEECS, NUST</span><span class="fact">📍 Islamabad, Pakistan</span><span class="fact">🤝 Open to collaboration</span></div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section id="achievements">
-  <div class="section-inner">
-    <div class="section-label">Recognition</div>
-    <h2 class="section-title">Achievements &amp; Awards</h2>
-    <div class="divider"></div>
-    <div class="ach-list">
-
-      <div class="ach-card">
-        <div class="ach-icon">🥇</div>
-        <div>
-          <div class="ach-title">Chief of Air Staff Gold Medal</div>
-          <div class="ach-sub">Awarded as top academic achiever at Fazaia College Sakesar — Matriculation Topper</div>
+    <section class="section skills" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow-num mono">03 / MY TOOLKIT</span><h2>Things I work with.</h2></div>
+          <p>Tools and technologies I’ve used across coursework and projects.</p>
+        </div>
+        <div class="skill-grid">
+          <div class="skill reveal"><small>01 / LANGUAGE</small><strong>C++</strong></div>
+          <div class="skill reveal"><small>02 / LANGUAGE</small><strong>Python</strong></div>
+          <div class="skill reveal"><small>03 / LANGUAGE</small><strong>Java</strong></div>
+          <div class="skill reveal"><small>04 / LANGUAGE</small><strong>TypeScript</strong></div>
+          <div class="skill reveal"><small>05 / FRONTEND</small><strong>React · Vite</strong></div>
+          <div class="skill reveal"><small>06 / STYLING</small><strong>Tailwind CSS</strong></div>
+          <div class="skill reveal"><small>07 / DATA & AI</small><strong>scikit-learn · NLTK</strong></div>
+          <div class="skill reveal"><small>08 / WORKFLOW</small><strong>Git · GitHub</strong></div>
         </div>
       </div>
+    </section>
 
-      <div class="ach-card">
-        <div class="ach-icon">🎓</div>
-        <div>
-          <div class="ach-title">NUST SEECS Admission — NET 152</div>
-          <div class="ach-sub">Secured admission to one of Pakistan's most competitive engineering programmes</div>
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-box reveal">
+          <div><span class="eyebrow">Have something in mind?</span><h2>Let’s make it happen.</h2><p>For collaboration, research opportunities, or a friendly hello.</p></div>
+          <a class="button button-primary" href="mailto:alishamaryamhabib7@gmail.com">Email me <span aria-hidden="true">↗</span></a>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="ach-card">
-        <div class="ach-icon">📊</div>
-        <div>
-          <div class="ach-title">CGPA 3.53</div>
-          <div class="ach-sub">Strong performance at NUST SEECS, Class BESE-16A, Batch 2025</div>
-        </div>
-      </div>
+  <footer>
+    <div class="wrap footer-row"><span>© <span id="year"></span> Alisha Maryam Habib · Made with curiosity.</span><a href="#top">Back to top ↑</a></div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-      <div class="ach-card">
-        <div class="ach-icon">⭐</div>
-        <div>
-          <div class="ach-title">A+ in F.Sc. — 1025/1100</div>
-          <div class="ach-sub">Army Public School Humayun Road — Pre-Engineering, 93.2%</div>
-        </div>
-      </div>
+  <script>
+    const root = document.documentElement;
+    const themeButton = document.getElementById("theme-toggle");
+    const savedTheme = localStorage.getItem("alisha-portfolio-theme");
+    if (savedTheme === "light") root.dataset.theme = "light";
+    themeButton.textContent = root.dataset.theme === "light" ? "☾" : "☼";
+    themeButton.addEventListener("click", () => {
+      const next = root.dataset.theme === "light" ? "dark" : "light";
+      if (next === "dark") delete root.dataset.theme;
+      else root.dataset.theme = next;
+      localStorage.setItem("alisha-portfolio-theme", next);
+      themeButton.textContent = next === "light" ? "☾" : "☼";
+      themeButton.setAttribute("aria-label", next === "light" ? "Switch to dark theme" : "Switch to light theme");
+    });
 
-      <div class="ach-card">
-        <div class="ach-icon">⭐</div>
-        <div>
-          <div class="ach-title">A+ in Matriculation — 1052/1100</div>
-          <div class="ach-sub">Fazaia College Sakesar — Science, 95.6%</div>
-        </div>
-      </div>
+    const menuButton = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open menu");
+      menuButton.textContent = "☰";
+    }));
 
-      <div class="ach-card">
-        <div class="ach-icon">💻</div>
-        <div>
-          <div class="ach-title">Active GitHub Portfolio</div>
-          <div class="ach-sub">Consistent open-source presence showcasing academic and personal projects</div>
-        </div>
-      </div>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const progress = document.querySelector(".progress");
+    const updateProgress = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (total > 0 ? window.scrollY / total * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
 
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-inner">
-    <div class="section-label">Let's Connect</div>
-    <h2 class="section-title">Get in Touch</h2>
-    <div class="divider"></div>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="ci-label">Email</div>
-        <a href="mailto:alishamaryamhabib7@gmail.com">alishamaryamhabib7@<br>gmail.com</a>
-      </div>
-      <div class="contact-item">
-        <div class="ci-label">Phone</div>
-        <a href="tel:+923203606037">+92 320 3606037</a>
-      </div>
-      <div class="contact-item">
-        <div class="ci-label">GitHub</div>
-        <a href="https://github.com/alishamaryamhabib777" target="_blank">alishamaryamhabib777</a>
-      </div>
-      <div class="contact-item">
-        <div class="ci-label">Portfolio</div>
-        <a href="https://alishamaryamhabib777.github.io/alishadev.github.io/#" target="_blank">alishadev.github.io</a>
-      </div>
-      <div class="contact-item">
-        <div class="ci-label">Location</div>
-        <p>Islamabad, Pakistan</p>
-      </div>
-    </div>
-    <a href="mailto:ahabib.bese25seecs@seecs.edu.pk" class="btn-primary" style="display:inline-block;">Send a Message</a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 <span>Alisha Maryam Habib</span> &nbsp;·&nbsp; BE Software Engineering, NUST SEECS &nbsp;·&nbsp; All rights reserved.</p>
-</footer>
-
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else revealItems.forEach(item => item.classList.add("visible"));
+  </script>
 </body>
 </html>
