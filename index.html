@@ -112,6 +112,7 @@
     .tag { padding:5px 8px; border:1px solid var(--line); border-radius:7px; color:var(--muted); font-size:9px; }
     .project-open { display:inline-flex; align-items:center; gap:6px; color:var(--ink); font:10px "DM Mono",monospace; text-decoration:none; white-space:nowrap; }
     .project-open:hover { color:var(--accent); }
+    .project-links { display:flex; justify-content:flex-end; align-items:center; flex-wrap:wrap; gap:12px; }
     .soon { color:var(--muted); font:10px "DM Mono",monospace; white-space:nowrap; }
     .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:74px; align-items:start; }
     .about-big { margin:0; font-family:"Space Grotesk",sans-serif; font-size:clamp(26px,3.6vw,42px); line-height:1.3; letter-spacing:-.06em; }
@@ -233,7 +234,7 @@
           <button class="filter-button" type="button" data-filter="hardware" aria-pressed="false">Hardware</button>
         </div>
         <div class="project-grid" id="project-grid">
-          <article class="project-card reveal" data-category="featured web">
+          <article class="project-card reveal" data-category="featured">
             <div class="project-visual" style="--visual:#dff17f">
               <span class="visual-ring"></span><span class="visual-ring r2"></span><span class="visual-shape">01</span><span class="visual-label">PROJECT / 01</span>
             </div>
@@ -265,7 +266,7 @@
               <div class="project-meta"><span class="project-kind">AI · Legal technology</span><span>03 — 07</span></div>
               <h3>Munsif.AI</h3>
               <p>A Pakistan-focused legal information and petition-drafting app, with English and Roman Urdu support.</p>
-              <div class="project-bottom"><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Gemini</span></div><a class="project-open" href="https://github.com/alishamaryamhabib777/munsif-ai" target="_blank" rel="noreferrer">Repository ↗</a></div>
+              <div class="project-bottom"><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Gemini</span></div><div class="project-links"><a class="project-open" href="https://munsifai.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="project-open" href="https://github.com/alishamaryamhabib777/munsif-ai" target="_blank" rel="noreferrer">Repository ↗</a></div></div>
             </div>
           </article>
 
