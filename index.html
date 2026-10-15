@@ -340,6 +340,35 @@
     .project-cover-aicon>img{object-fit:contain;padding:10px}
     .project-cover-ml{background:#111b2b!important}
 
+  
+    .skill{display:flex;align-items:center;gap:13px}
+    .skill-icon{display:grid;place-items:center;width:46px;height:46px;flex:0 0 46px;border:1px solid color-mix(in srgb,currentColor 24%,transparent);border-radius:13px;background:color-mix(in srgb,currentColor 9%,var(--card))}
+    .skill-icon svg{width:29px;height:29px;display:block}
+    .skill-copy{min-width:0}
+    .skill-copy .skill-label{display:block}
+    .skill-copy strong{display:block;margin-top:7px!important;font-size:13px!important}
+    .skill-icon-cpp{color:#659ad2}.skill-icon-python{color:#ffd43b}.skill-icon-python svg path:first-child{fill:#ffd43b}.skill-icon-python svg path:nth-child(2){fill:#3776ab}
+    .skill-icon-java{color:#ef7c28}.skill-icon-typescript{color:#3178c6}.skill-icon-react{color:#61dafb}.skill-icon-tailwind{color:#38bdf8}.skill-icon-data{color:#f1a340}.skill-icon-git{color:#f05133}
+    .contact-symbol svg{width:23px;height:23px;display:block}
+    .contact-symbol-github svg{width:24px;height:24px}
+    .contact-symbol-linkedin svg{width:21px;height:21px}
+    .tourism-visual{height:246px!important;display:grid!important;grid-template-columns:1fr .95fr;gap:13px;padding:15px 16px!important;overflow:hidden;background:linear-gradient(135deg,#e7eadc 0%,#c7d8c5 54%,#9dbba5 100%)!important;color:#193c37}
+    .tourism-visual::before,.tourism-visual::after{display:none!important}
+    .tourism-map-art{position:relative;z-index:1;align-self:stretch;display:flex;flex-direction:column;justify-content:center;min-width:0;padding:6px 1px}
+    .tourism-kicker{font:600 7px "DM Mono",monospace;letter-spacing:.13em;color:#527465}
+    .tourism-map-art h4{margin:9px 0 1px;font:600 clamp(16px,2vw,22px)/1.12 "Space Grotesk",sans-serif;letter-spacing:-.04em;color:#173c36}
+    .tourism-map-art svg{width:100%;height:70px;max-width:230px;color:#447a68;overflow:visible}
+    .tourism-stops{display:flex;align-items:center;gap:5px;flex-wrap:wrap;font:600 6px "DM Mono",monospace;letter-spacing:.05em;color:#325b4e}
+    .tourism-stops i{font-style:normal;color:#bc8254}
+    .tourism-screen{position:relative;z-index:1;align-self:center;height:202px;min-width:0;margin:0;overflow:hidden;border:5px solid #263b39;border-bottom-width:8px;border-radius:11px;background:#101317;box-shadow:0 11px 20px #18392b44;transform:rotate(1.2deg)}
+    .tourism-screen figcaption{height:20px;display:flex;align-items:center;gap:5px;padding:0 7px;color:#e6eadf;background:#263b39;font:600 5px "DM Mono",monospace;letter-spacing:.035em;white-space:nowrap}
+    .tourism-screen figcaption b{margin-left:auto;color:#b9d5b8}
+    .tourism-screen-dot{width:5px;height:5px;border-radius:50%;background:#e7b566}
+    .tourism-screen img{width:100%;height:calc(100% - 38px);display:block;object-fit:cover;object-position:left center}
+    .tourism-screen-footer{position:absolute;left:0;right:0;bottom:0;padding:6px 5px 4px;background:#263b39;color:#c6d9c5;text-align:center;font:5px "DM Mono",monospace;letter-spacing:.07em}
+    @media(max-width:430px){.tourism-visual{grid-template-columns:1fr .88fr;gap:7px;padding:12px!important}.tourism-screen{height:185px}.tourism-map-art h4{font-size:16px}.tourism-stops{gap:3px;font-size:5px}}
+    @media(max-width:360px){.skill{gap:9px;padding:12px!important}.skill-icon{width:39px;height:39px;flex-basis:39px}.skill-icon svg{width:25px;height:25px}.skill-copy strong{font-size:11px!important}.tourism-kicker{font-size:6px}.tourism-screen figcaption{font-size:4px}}
+
   </style>
 </head>
 <body>
@@ -457,7 +486,19 @@
             </div>
           </article>
 
-          <article class="project-card reveal" data-category="software" data-cursor-label="TOURISM" data-cursor-color="#b0cf9c" style="--sector-accent:#b0cf9c"><div class="project-visual project-cover-visual"><img src="assets/tourist-management-cover.jpg" alt="Tourist Management System console menu with password text hidden" loading="lazy" decoding="async"></div>
+          <article class="project-card reveal" data-category="software" data-cursor-label="TOURISM" data-cursor-color="#b0cf9c" style="--sector-accent:#b0cf9c"><div class="project-visual tourism-visual">
+              <div class="tourism-map-art" aria-hidden="true">
+                <span class="tourism-kicker">PAKISTAN · TRIP PLANNER</span>
+                <h4>Find your next<br>favourite place.</h4>
+                <svg viewBox="0 0 220 96" fill="none"><path d="M17 71C45 57 54 27 86 32S129 70 153 50 183 24 205 16" stroke="currentColor" stroke-width="2.5" stroke-dasharray="4 5" stroke-linecap="round"/><circle cx="18" cy="71" r="7" fill="#f7ead2" stroke="currentColor" stroke-width="3"/><circle cx="86" cy="32" r="7" fill="#f7ead2" stroke="currentColor" stroke-width="3"/><circle cx="153" cy="50" r="7" fill="#f7ead2" stroke="currentColor" stroke-width="3"/><circle cx="205" cy="16" r="7" fill="#f7ead2" stroke="currentColor" stroke-width="3"/><path d="M18 16c-6 0-10 4-10 10 0 7 10 17 10 17s10-10 10-17c0-6-4-10-10-10Zm0 7a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" fill="#e5aa6b"/></svg>
+                <div class="tourism-stops"><span>LAHORE</span><i>→</i><span>ISLAMABAD</span><i>→</i><span>HUNZA</span></div>
+              </div>
+              <figure class="tourism-screen">
+                <figcaption><span class="tourism-screen-dot"></span> TOURIST MANAGEMENT SYSTEM <b>C++</b></figcaption>
+                <img src="assets/tourist-management-cover.jpg" alt="Tourist Management System console interface, with password hidden" loading="lazy" decoding="async">
+                <span class="tourism-screen-footer">DISTANCE · HOTELS · TRANSPORT</span>
+              </figure>
+            </div>
             <div class="project-info">
               <div class="project-meta"><span class="project-kind">Tourism · Trip planning</span><span>08 / 09</span></div>
               <h3>Tourist Management System</h3>
@@ -496,14 +537,14 @@
       <div class="wrap">
         <div class="section-head reveal"><div><span class="section-index">03 / TOOLKIT</span><h2>Tools of the trade.</h2></div><p>Technologies I’ve used in my coursework, internship work, and projects.</p></div>
         <div class="skill-grid">
-          <div class="skill reveal"><span class="skill-label">LANGUAGE / 01</span><strong>C++</strong></div>
-          <div class="skill reveal"><span class="skill-label">LANGUAGE / 02</span><strong>Python</strong></div>
-          <div class="skill reveal"><span class="skill-label">LANGUAGE / 03</span><strong>Java</strong></div>
-          <div class="skill reveal"><span class="skill-label">LANGUAGE / 04</span><strong>TypeScript</strong></div>
-          <div class="skill reveal"><span class="skill-label">FRONTEND / 05</span><strong>React · Vite</strong></div>
-          <div class="skill reveal"><span class="skill-label">STYLING / 06</span><strong>Tailwind CSS</strong></div>
-          <div class="skill reveal"><span class="skill-label">DATA &amp; AI / 07</span><strong>pandas · scikit-learn</strong></div>
-          <div class="skill reveal"><span class="skill-label">WORKFLOW / 08</span><strong>Git · GitHub</strong></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-cpp" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 34 11v18L20 37 6 29V11L20 3Z" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="20" y="24" text-anchor="middle" fill="currentColor" font-family="Arial,sans-serif" font-size="12" font-weight="800">C++</text></svg></span><span class="skill-copy"><span class="skill-label">LANGUAGE / 01</span><strong>C++</strong></span></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-python" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4c-7 0-8 3-8 7v5h11v2H8c-4 0-6 3-6 8s2 8 7 8h4v-6c0-4 3-7 7-7h8c3 0 5-2 5-5V11c0-5-4-7-13-7Z" fill="currentColor" opacity=".95"/><path d="M20 36c7 0 8-3 8-7v-5H17v-2h15c4 0 6-3 6-8s-2-8-7-8h-4v6c0 4-3 7-7 7h-8c-3 0-5 2-5 5v3c0 5 4 7 13 7Z" fill="currentColor" opacity=".7"/><circle cx="16" cy="10" r="1.5" fill="#101820"/><circle cx="24" cy="30" r="1.5" fill="#101820"/></svg></span><span class="skill-copy"><span class="skill-label">LANGUAGE / 02</span><strong>Python</strong></span></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-java" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M21 5c-6 5 6 5 0 10m-6-7c-5 4 5 5 0 8m-2 3h18l-2 12H15l-2-12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 24c-4 4 18 5 22 1M12 30c2 4 17 4 20 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="skill-copy"><span class="skill-label">LANGUAGE / 03</span><strong>Java</strong></span></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-typescript" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="32" height="32" rx="5" fill="currentColor"/><text x="20" y="26" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="14" font-weight="800">TS</text></svg></span><span class="skill-copy"><span class="skill-label">LANGUAGE / 04</span><strong>TypeScript</strong></span></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-react" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="20" cy="20" rx="17" ry="7"/><ellipse cx="20" cy="20" rx="17" ry="7" transform="rotate(60 20 20)"/><ellipse cx="20" cy="20" rx="17" ry="7" transform="rotate(120 20 20)"/></g><circle cx="20" cy="20" r="3" fill="currentColor"/><path d="m29 2-11 18h7l-5 17 14-21h-8l3-14Z" fill="#f4c65a" stroke="#101820" stroke-width=".8"/></svg></span><span class="skill-copy"><span class="skill-label">FRONTEND / 05</span><strong>React · Vite</strong></span></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-tailwind" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 16c3-7 8-10 15-8 4 1 6 4 8 8-3-4-6-5-10-4-2 1-4 3-6 6-2 3-4 4-7 4 2-2 3-4 4-6Zm24 8c-3 7-8 10-15 8-4-1-6-4-8-8 3 4 6 5 10 4 2-1 4-3 6-6 2-3 4-4 7-4-2 2-3 4-4 6Z" fill="currentColor"/></svg></span><span class="skill-copy"><span class="skill-label">STYLING / 06</span><strong>Tailwind CSS</strong></span></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-data" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="m20 3 15 8v18l-15 8L5 29V11L20 3Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="13" cy="25" r="2.5" fill="currentColor"/><circle cx="20" cy="15" r="2.5" fill="currentColor"/><circle cx="28" cy="24" r="2.5" fill="currentColor"/><path d="m14 23 5-7m3 1 5 6m-12 2h11" fill="none" stroke="currentColor" stroke-width="1.7"/><text x="20" y="34" text-anchor="middle" fill="currentColor" font-family="Arial,sans-serif" font-size="6" font-weight="700">ML</text></svg></span><span class="skill-copy"><span class="skill-label">DATA &amp; AI / 07</span><strong>pandas · scikit-learn</strong></span></div>
+          <div class="skill reveal"><span class="skill-icon skill-icon-git" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M11 8v21m0-12c0-4 6-5 13-5m-13 8c0 5 7 7 15 7" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><circle cx="11" cy="8" r="4" fill="currentColor"/><circle cx="11" cy="31" r="4" fill="currentColor"/><circle cx="28" cy="12" r="4" fill="currentColor"/><circle cx="28" cy="27" r="4" fill="currentColor"/></svg></span><span class="skill-copy"><span class="skill-label">WORKFLOW / 08</span><strong>Git · GitHub</strong></span></div>
         </div>
       </div>
     </section>
@@ -518,10 +559,10 @@
           </div>
         </div>
 <div class="contact-details reveal" aria-label="Contact details">
-<a class="contact-detail" href="tel:+923203606037"><span class="contact-symbol" aria-hidden="true">☎</span><span><small>PHONE</small><strong>+92 320 3606037</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
-<a class="contact-detail" href="mailto:alishamaryamhabib7@gmail.com"><span class="contact-symbol" aria-hidden="true">@</span><span><small>EMAIL</small><strong>alishamaryamhabib7@gmail.com</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
-<a class="contact-detail" href="https://github.com/alishamaryamhabib777" target="_blank" rel="noreferrer"><span class="contact-symbol" aria-hidden="true">&lt;/&gt;</span><span><small>GITHUB</small><strong>alishamaryamhabib777</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
-<a class="contact-detail" href="https://www.linkedin.com/in/alishamaryamhabib" target="_blank" rel="noreferrer"><span class="contact-symbol" aria-hidden="true">in</span><span><small>LINKEDIN</small><strong>Alisha Maryam Habib</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+<a class="contact-detail" href="tel:+923203606037"><span class="contact-symbol contact-symbol-phone" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l2 5-2.2 1.8a15 15 0 0 0 4.4 4.4L16 12l5 2v3c0 2-2 4-4 4C10 20 4 14 3 7c0-2 2-4 4-4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span><small>PHONE</small><strong>+92 320 3606037</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+<a class="contact-detail" href="mailto:alishamaryamhabib7@gmail.com"><span class="contact-symbol contact-symbol-email" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span><small>EMAIL</small><strong>alishamaryamhabib7@gmail.com</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+<a class="contact-detail" href="https://github.com/alishamaryamhabib777" target="_blank" rel="noreferrer"><span class="contact-symbol contact-symbol-github" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.5v-2.1c-2.4.5-2.9-1-2.9-1-.4-1-1-1.3-1-1.3-.8-.5.1-.5.1-.5.9.1 1.4 1 1.4 1 .8 1.4 2.1 1 2.6.7.1-.6.3-1 .6-1.2-1.9-.2-3.9-1-3.9-4.2 0-.9.3-1.6.9-2.2-.1-.2-.4-1.1.1-2.2 0 0 .7-.2 2.3.9a8 8 0 0 1 4.2 0c1.6-1.1 2.3-.9 2.3-.9.5 1.1.2 2 .1 2.2.6.6.9 1.3.9 2.2 0 3.2-2 4-3.9 4.2.4.3.7.8.7 1.6V21A9.5 9.5 0 0 0 12 2.5Z" fill="currentColor"/></svg></span><span><small>GITHUB</small><strong>alishamaryamhabib777</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+<a class="contact-detail" href="https://www.linkedin.com/in/alishamaryamhabib" target="_blank" rel="noreferrer"><span class="contact-symbol contact-symbol-linkedin" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" fill="currentColor"/><circle cx="8" cy="8" r="1.4" fill="var(--card)"/><path d="M6.8 10h2.4v7H6.8zm4.1 0h2.3v1c.5-.8 1.2-1.2 2.3-1.2 2.1 0 2.8 1.3 2.8 3.3V17h-2.4v-3.5c0-.9-.2-1.7-1.2-1.7s-1.4.8-1.4 1.7V17h-2.4z" fill="var(--card)"/></svg></span><span><small>LINKEDIN</small><strong>Alisha Maryam Habib</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
 </div>
       </div>
     </section>
