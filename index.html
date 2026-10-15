@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -576,7 +576,8 @@
     const themeButton = document.getElementById("theme-toggle");
     const themeKey = "alisha-portfolio-theme-v3";
     try {
-      root.dataset.theme = localStorage.getItem(themeKey) === "light" ? "light" : "dark";
+      const savedTheme = localStorage.getItem(themeKey);
+      root.dataset.theme = savedTheme === "dark" ? "dark" : "light";
     } catch {}
     const syncThemeButton = () => {
       const dark = root.dataset.theme === "dark";
